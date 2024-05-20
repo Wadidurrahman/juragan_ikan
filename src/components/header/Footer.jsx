@@ -25,9 +25,9 @@ export default function Footer() {
               </div>
               <span className="relative ">
                 <div className="flex py-2 gap-2 justify-end">
-                  <FaInstagram size={24}></FaInstagram>
-                  <FaWhatsapp size={24}></FaWhatsapp>
-                  <ImMail2 size={24}></ImMail2>
+                  <FaInstagram size={24} className="cursor-pointer fill-[#224D54]"></FaInstagram>
+                  <FaWhatsapp size={24} className="cursor-pointer fill-[#224D54]"></FaWhatsapp>
+                  <ImMail2 size={24} className="cursor-pointer fill-[#224D54]"></ImMail2>
                 </div>
               </span>
             </table>

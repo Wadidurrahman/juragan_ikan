@@ -8,8 +8,8 @@ export default function Login() {
   return (
     /* Ini adalah page login */
     /* start */
-    <div className="container min-h-screen items-center  py-20 px-10 grid grid-cols-2 gap-20 justify-between">
-      <div className="text-center relative left-16 px-10 py-5">
+    <div className="container min-h-screen items-center  py-20 px-10 grid grid-cols-2 gap-20 justify-between ">
+      <div className="text-center relative left-10 px-10 py-5">
         <p className="text-lg font-bold mt-5">SELAMAT DATANG DI JURAGAN IKAN</p>
         <p className="text-xs mt-3">
           Baru dijuragan ikan? <span className=" no-underline hover:underline text-green-700 font-bold cursor-pointer">Daftar Gratis</span>
@@ -43,15 +43,15 @@ export default function Login() {
         <h4 className=" no-underline hover:underline text-sm mt-2 text-right cursor-pointer text-green-700">Lupa Kata Sandi?</h4>
         <h4 className="text-left text-sm">Masuk menggunakan</h4>
         <div className="flex gap-10 justify-center items-center">
-          <div className="justify-center items-center mt-3  rounded-lg px-8 py-1 border border-gray-300">
+          <button className="justify-center items-center mt-3  rounded-lg px-8 py-1 border border-gray-300 cursor-pointer">
             <img src={ICON_FB} className=" w-6   rounded-sm " />
-          </div>
-          <div className="justify-center items-center mt-3  rounded-lg px-8 py-1 border border-gray-300">
+          </button>
+          <button className="justify-center items-center mt-3  rounded-lg px-8 py-1 border border-gray-300 cursor-pointer">
             <img src={GOOGLE} className=" w-6   rounded-sm " />
-          </div>
-          <div className="justify-center items-center mt-3  rounded-lg px-8 py-1 border border-gray-300">
+          </button>
+          <button className="justify-center items-center mt-3  rounded-lg px-8 py-1 border border-gray-300 cursor-pointer">
             <img src={APPLE} className=" w-6   rounded-sm " />
-          </div>
+          </button>
         </div>
         <hr class="mt-3 border-t border-gray-300" />
         <div className="items-left flex mt-3">
@@ -65,7 +65,7 @@ export default function Login() {
           Dengan melanjutkan kamu menerima <span className="font-bold text-green-700 underline cursor-pointer">Kebijakan Privasi</span> kami.
         </h6>
       </div>
-      <div className="relative px-12 bottom-60 right-[-20px] rounded-lg justify-end">
+      <div className="relative bottom-60 right-[-8px] rounded-lg justify-end">
         <img src={COVER_IMAGE} className="absolute rounded-xl w-[280%] h-[30rem] object-cover" />
       </div>
     </div>
