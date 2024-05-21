@@ -1,13 +1,10 @@
 import SAMPUL from "../../assets/sampul.png";
 import PROFIL from "../../assets/profil.webp";
-import Header from "../../components/header/Header";
 import { FaPlusCircle } from "react-icons/fa";
-import Footer from "../../components/header/Footer";
 
 export default function Profile() {
   return (
     <>
-      <Header />
       <div className="relative">
         <main className="relative py-40">
           <div className="absolute top-[-150px] left-0 w-full z-0">
@@ -21,7 +18,7 @@ export default function Profile() {
             </span>
           </div>
         </main>
-        <div className="w-full mx-auto mt-4 bg-white p-8 py-[28rem] border-gray-300 flex justify-between ">
+        <div className="w-full mx-auto mt-4 bg-white p-8 py-[26rem] border-gray-300 flex justify-between ">
           <div className="w-full border-2 rounded-lg p-8 bottom-20">
             <h4 className="mt-5 py-5 font-bold text-2xl">Informasi Pribadi</h4>
             <form action="" className="grid grid-cols-4 gap-4">
@@ -73,7 +70,6 @@ export default function Profile() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

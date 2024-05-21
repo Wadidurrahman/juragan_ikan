@@ -1,6 +1,4 @@
-import Header from "./header/Header";
 import { useState } from "react";
-import Footer from "./header/Footer";
 
 export default function Inputpakan() {
   const days = Array.from({ length: 31 }, (_, i) => i + 1);
@@ -12,12 +10,11 @@ export default function Inputpakan() {
   const [selectedYear, setSelectedYear] = useState("");
   return (
     <>
-      <Header />
-      <main className="relative justify-center items-center px-80 py-40 ">
-        <table className="table-auto bg-slate-200 w-full border-collapse border border-gray-200">
+      <main className="relative justify-center items-center px-40 py-36 ">
+        <table className="table-auto bg-slate-200 w-full border-collapse border border-gray-300">
           <thead>
-            <tr className="bg-[#224D54] text-white">
-              <th className="border border-gray-300 px-4 py-2">Type</th>
+            <tr className="bg-[#224D54] text-white ">
+              <th className=" px-4 py-2">Type</th>
               <th className="border border-gray-300 px-4 py-2">Pemasukkan</th>
             </tr>
           </thead>
@@ -103,12 +100,11 @@ export default function Inputpakan() {
             </tr>
           </tbody>
         </table>
-        <div className="flex mt-2 gap-2 ">
-          <bottom className="px-6 py-1.5 bg-[#d2d2d2] hover:bg-[#F9841A] rounded-lg cursor-pointer transition-all duration-300">Batal</bottom>
-          <bottom className="px-6 py-1.5  bg-[#d2d2d2] hover:bg-[#F9841A] rounded-lg transition-all duration-300 cursor-pointer">Simpan</bottom>
+        <div className="flex mt-2 gap-2">
+          <bottom className=" relative left-[47rem] px-6 py-1.5 bg-[#d2d2d2] hover:bg-[#F9841A] rounded-lg cursor-pointer transition-all duration-300">Batal</bottom>
+          <bottom className="relative left-[47rem] px-6 py-1.5  bg-[#d2d2d2] hover:bg-[#F9841A] rounded-lg transition-all duration-300 cursor-pointer">Simpan</bottom>
         </div>
       </main>
-      <Footer />
     </>
   );
 }

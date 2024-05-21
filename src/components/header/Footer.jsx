@@ -10,9 +10,17 @@ export default function Footer() {
         <hr></hr>
         <div className="flex justify-between mt-5 px-8 bottom-15">
           <div className="text-[#224D54] font-bold text-2x1 mt-5">
-            <h4>Tentang Kami</h4>
-            <h4>Kebijakan kami</h4>
-            <h4>FAQ</h4>
+            <a href="">
+              <button>Tentang Kami</button>
+            </a>
+            <br />
+            <a href="/Kebijakanprivasi">
+              <button>Kebijakan kami</button>
+            </a>
+            <br />
+            <a href="">
+              <button>FAQ</button>
+            </a>
           </div>
           <div className="mt-5">
             <h4 className="font-semibold">Subscribe Our Newsletter</h4>

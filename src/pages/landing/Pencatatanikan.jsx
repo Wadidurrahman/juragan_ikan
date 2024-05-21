@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-import Header from "../../components/header/Header";
 import { IoIosAdd } from "react-icons/io";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Footer from "../../components/header/Footer";
 
 export default function Pencatatanikan() {
   const [selectedDate, setSelectedDate] = useState(null);
 
   return (
     <>
-      <Header />
       <main>
-        <div className="relative p-40 h-full grid grid-cols-2">
+        <div className="relative p-40 h-full grid grid-cols-2 mt-5">
           <div className="relative right-28 mt-3">
             <h2 className="relative font-bold text-[25px] py-0">Pencatatan Data Ikan</h2>
           </div>
@@ -34,9 +31,11 @@ export default function Pencatatanikan() {
 
             {/* Add Icon */}
             <div className="relative left-[40rem]">
-              <button className=" items-center justify-center p-2 bg-[#F9841A] text-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring focus:border-orange-600 transition-all duration-300">
-                <IoIosAdd size={20} />
-              </button>
+              <a href="Inputikan">
+                <button className=" items-center justify-center p-2 bg-[#F9841A] text-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring focus:border-orange-600 transition-all duration-300">
+                  <IoIosAdd size={20} />
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -139,11 +138,18 @@ export default function Pencatatanikan() {
                 </tr>
               </tbody>
             </table>
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+              <thead class="text-xs text-white uppercase bg-[#224D54] dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <div>
+                    <button></button>
+                  </div>
+                </tr>
+              </thead>
+            </table>
           </div>
         </div>
-        <div></div>
       </main>
-      <Footer />
     </>
   );
 }

@@ -4,11 +4,11 @@ import LOGO from "../../assets/logojuraganikan.png";
 import PROFIL from "../../assets/profil.webp";
 
 const navigation = [
-  { name: "Pencatatan", href: "#", current: false },
+  { name: "Pencatatan", href: "/Pencatatan", current: false },
   { name: "Statistik", href: "#", current: false },
   { name: "Panduan", href: "#", current: false },
   { name: "Artikel", href: "#", current: false },
-  { name: "Forum", href: "#", current: false },
+  { name: "Forum", href: "/forum", current: false },
 ];
 
 function classNames(...classes) {
@@ -49,10 +49,10 @@ export default function Header() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex gap-2 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button type="button" className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <button type="button" className="relative rounded-full p-1 text-yellow-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <BellIcon className="h-6 w-6 fill-[#ffbf00] " aria-hidden="true" />
                 </button>
 
                 <button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">

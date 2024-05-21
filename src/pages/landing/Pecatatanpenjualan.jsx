@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-import Header from "../../components/header/Header";
 import { IoIosAdd } from "react-icons/io";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import { IoIosArrowDropleftCircle } from "react-icons/io";
-import { IoIosArrowDroprightCircle } from "react-icons/io";
-import Footer from "../../components/header/Footer";
+import { IoMdArrowDropleft } from "react-icons/io";
+import { IoMdArrowDropright } from "react-icons/io";
 
 export default function Pencatatanpenjualan() {
   const [selectedDate, setSelectedDate] = useState(null);
 
   return (
     <>
-      <Header />
       <main>
         <div className="relative p-40 h-full grid grid-cols-2">
           <div className="relative right-28 mt-3">
@@ -29,16 +26,18 @@ export default function Pencatatanpenjualan() {
         <div>
           <div className="relative flex items-center gap-2 p-2 -m-36 px-44">
             {/* Search Input */}
-            <input type="text" placeholder="Search..." className="border rounded-lg p-2 focus:outline-none focus:ring focus:border-blue-300" />
+            <input type="text" placeholder="Cari..." className="border rounded-lg p-2 focus:outline-none focus:ring focus:border-blue-300" />
 
             {/* DatePicker */}
             <DatePicker selected={selectedDate} onChange={(date) => setSelectedDate(date)} className="border rounded-lg p-2 focus:outline-none focus:ring focus:border-green-800" placeholderText="Pilih Tanggal" />
 
             {/* Add Icon */}
             <div className="relative left-[40rem]">
-              <button className=" items-center justify-center p-2 bg-[#F9841A] text-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring focus:border-orange-600 transition-all duration-300">
-                <IoIosAdd size={20} />
-              </button>
+              <a href="/inputpenjualan">
+                <button className=" items-center justify-center p-2 bg-[#F9841A] text-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring focus:border-orange-600 transition-all duration-300">
+                  <IoIosAdd size={20} />
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -149,17 +148,24 @@ export default function Pencatatanpenjualan() {
                 </tr>
               </tbody>
             </table>
+            <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+              <thead class="text-xs text-white uppercase bg-[#224D54] dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                  <div className="relative py-2 left-[56rem]">
+                    <button className="relative flex flex-row gap-3 ">
+                      <IoMdArrowDropleft size={24} className="fill-white"></IoMdArrowDropleft>
+                      <p className="font-semibold text-sm">Selanjutnya</p>
+                      <p className="bg-white py-0 text-[#224D54]">1</p>
+                      <p className="font-semibold text-sm">Sebelumnya</p>
+                      <IoMdArrowDropright size={24} className="fill-white" />
+                    </button>
+                  </div>
+                </tr>
+              </thead>
+            </table>
           </div>
         </div>
-        <div className="relative px-8 py-4 left-[62rem]">
-          <span className="relative flex flex-row gap-4">
-            <IoIosArrowDropleftCircle size={24} className="fill-[#224D54]" />
-            <buttom className="">Sebelumnya</buttom>
-            <IoIosArrowDroprightCircle size={24} className="fill-[#224D54]" />
-          </span>
-        </div>
       </main>
-      <Footer />
     </>
   );
 }

@@ -1,4 +1,4 @@
-import COVER_IMAGE from "../../assets/img_login.jpg";
+import COVER_IMAGE from "../../assets/img/lele.png";
 import React from "react";
 import ICON_FB from "../../assets/icon/fb.svg";
 import APPLE from "../../assets/icon/apple.svg";
@@ -8,14 +8,17 @@ export default function Registerasi() {
   return (
     /* Ini adalah page login */
     /* start */
-    <div className="container min-h-screen items-center  py-20 px-10 grid grid-cols-2 gap-20 justify-between">
-      <div className="text-center gap-10 px-10 py-5">
-        <p className="text-lg font-bold mt-5">SELAMAT DATANG DI JURAGAN IKAN</p>
-        <p className="text-xs mt-3">
-          sudah punya akun? <span className=" no-underline hover:underline text-green-700 font-bold cursor-pointer">Masuk</span>
-        </p>
+    <div className="container min-h-screen items-center  py-15 px-10 grid grid-cols-2 gap-20 justify-between ">
+      <div className="text-center relative left-10 px-10 py-5">
+        <p className="text-xl font-bold mt-5">Selamat Datang di Juragan</p>
+        <div className="flex justify-center items-center text-sm mt-2">
+          <p> Sudah Punya Akun?</p>
+          <a href="/login" className=" text-green-700 font-bold cursor-pointer">
+            Masuk
+          </a>
+        </div>
         <label class="block mt-1">
-          <span class="text-left after:content-['*'] after:ml-0.10 after:text-red-500 block text-sm font-medium text-slate-500">Nama Lengkap</span>
+          <span class="text-left after:content-['*'] after:ml-0.10 after:text-red-500 block font-bold text-sm text-slate-700">Nama Lengkap</span>
           <input
             type="namalengkap"
             name="namalengkap"
@@ -24,7 +27,7 @@ export default function Registerasi() {
           />
         </label>
         <label class="block mt-1">
-          <span class="text-left after:content-['*'] after:ml-0.10 after:text-red-500 block text-sm font-medium text-slate-500">Email</span>
+          <span class="text-left after:content-['*'] after:ml-0.10 after:text-red-500 block font-bold text-sm text-slate-700">Email</span>
           <input
             type="email"
             name="email"
@@ -35,7 +38,7 @@ export default function Registerasi() {
         <label class="block mt-1">
           <span
             class="text-left after:content-['*'] after:ml-0.10
-          after:text-red-500 block text-sm font-medium text-slate-700"
+          after:text-red-500 block font-bold text-sm text-slate-700"
           >
             Kata Sandi
           </span>
@@ -67,7 +70,7 @@ export default function Registerasi() {
           </div>
         </div>
       </div>
-      <div className="relative px-12 bottom-60 right-[-20px] rounded-lg justify-end">
+      <div className="relative bottom-60 right-[-8px] rounded-lg justify-end">
         <img src={COVER_IMAGE} className="absolute rounded-xl w-[280%] h-[30rem] object-cover" />
       </div>
     </div>

@@ -1,16 +1,13 @@
 import React, { useState } from "react";
-import Header from "../../components/header/Header";
 import { IoIosAdd } from "react-icons/io";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import Footer from "../../components/header/Footer";
 
 export default function Pencatatanpakan() {
   const [selectedDate, setSelectedDate] = useState(null);
 
   return (
     <>
-      <Header />
       <main>
         <div className="relative p-40 h-full grid grid-cols-2">
           <div className="relative right-28 mt-3">
@@ -34,9 +31,11 @@ export default function Pencatatanpakan() {
 
             {/* Add Icon */}
             <div className="relative left-[40rem]">
-              <button className=" items-center justify-center p-2 bg-[#F9841A] text-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring focus:border-orange-600 transition-all duration-300">
-                <IoIosAdd size={20} />
-              </button>
+              <a href="/Inputpakan">
+                <button className=" items-center justify-center p-2 bg-[#F9841A] text-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring focus:border-orange-600 transition-all duration-300">
+                  <IoIosAdd size={20} />
+                </button>
+              </a>
             </div>
           </div>
         </div>
@@ -149,9 +148,7 @@ export default function Pencatatanpakan() {
             </table>
           </div>
         </div>
-        <div></div>
       </main>
-      <Footer />
     </>
   );
 }

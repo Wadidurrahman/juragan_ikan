@@ -1,14 +1,10 @@
-import Header from "../../components/header/Header";
-import Footer from "../../components/header/Footer";
-
 export default function Kebijakanprivasi() {
   return (
     <>
-      <Header />;
       <main>
         <article>
-          <div className="relative flex flex-col justify-center items-center mt-36 h-full">
-            <h1 className="font-bold text-[20px] cursor-pointer justify-center items-center">Kebijakan Privasi</h1>
+          <div className="relative flex flex-col justify-center items-center h-full">
+            <h1 className="font-bold text-[20px] cursor-pointer justify-center items-center mt-32">Kebijakan Privasi</h1>
           </div>
           <div className="p-8">
             <h4 className="font-semibold p-5">Terakhir Diperbarui:Mei 2024</h4>
@@ -49,7 +45,6 @@ export default function Kebijakanprivasi() {
           </div>
         </article>
       </main>
-      <Footer />
     </>
   );
 }
