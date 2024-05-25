@@ -14,8 +14,9 @@ export default function Forum() {
             <img width={100} height={100} src={Wa} className="py-10" alt="Whatapps" />
             <button className="px-10 py-1 rounded-full text-white font-bold text-sm bg-[#224D54]">Lanjutkan Obrolan Ke Wa</button>
           </div>
-          <div className="w-1/2 px-20 items-center justify-center text-center py-20">
+          <div className="w-1/2 px-15 items-center justify-center text-center py-20">
             <p>Bergabunglah dengan grup diskusi WhatsApp kami yang aktif, tempat para peternak ikan berkumpul untuk berbagi pengalaman, tips, dan informasi terkini seputar budidaya ikan.</p>
+            <br />
             <p>
               Dapatkan kesempatan untuk bertanya, belajar, dan berkolaborasi dengan sesama peternak yang berpengalaman. Jangan lewatkan kesempatan untuk meningkatkan pengetahuan dan keterampilan Anda dalam dunia budidaya ikan. Ayo bergabung
               sekarang untuk mendapatkan manfaatnya!

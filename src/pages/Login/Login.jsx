@@ -35,12 +35,18 @@ export default function Login() {
           >
             Kata Sandi
           </span>
-          <input
-            type="password"
-            name="password"
-            class="mt-1 px-2 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
-            placeholder="Masukkan kata sandi"
-          />
+          <div class="relative mt-1">
+            <input
+              type="Password"
+              name="password"
+              id="password"
+              class="px-2 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
+              placeholder="Masukkan kata sandi"
+            />
+            <span class="absolute inset-y-0 right-0 pr-3 flex items-center cursor-pointer">
+              <i id="togglePassword" class="fa fa-eye"></i>
+            </span>
+          </div>
         </label>
         <button class="py-4 px-[44%] text-xs uppercase tracking-wider font-bold text-white  bg-gray-300 rounded-md shadow-md transition duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-teal-800 hover:text-white hover:shadow-lg active:translate-y-1 mt-5">
           Masuk

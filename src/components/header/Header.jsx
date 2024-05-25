@@ -39,7 +39,7 @@ export default function Header() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "rounded-md px-3 py-2 text-sm font-medium")}
+                        className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-200 hover:text-[#F6841F] ", "rounded-md px-3 py-2 text-sm font-bold")}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
@@ -55,11 +55,13 @@ export default function Header() {
                   <BellIcon className="h-6 w-6 fill-[#ffbf00] " aria-hidden="true" />
                 </button>
 
-                <button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user </span>
-                  <img className="h-8 w-8 rounded-full" src={PROFIL} alt="" />
-                </button>
+                <a href="/akun">
+                  <button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <span className="absolute -inset-1.5" />
+                    <span className="sr-only">Open user </span>
+                    <img className="h-8 w-8 rounded-full" src={PROFIL} alt="" />
+                  </button>
+                </a>
                 {/* Profile dropdown */}
               </div>
             </div>

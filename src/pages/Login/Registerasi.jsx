@@ -49,15 +49,15 @@ export default function Registerasi() {
             placeholder="Masukkan kata sandi"
           />
         </label>
-        <button class="py-[4%] px-[44%] text-xs uppercase tracking-wider font-bold text-white  bg-gray-300 rounded-md shadow-md transition duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-teal-800 hover:text-white hover:shadow-lg active:translate-y-1 mt-5">
-          Masuk
-        </button>
         <div className="items-left flex mt-5">
           <input type="checkbox" id="myCheckbox" class="form-checkbox h-4 w-5 text-blue-600" />
-          <h6 className="text-xs items-center">
+          <h6 className="text-xs items-center px-2">
             Dengan melanjutkan kamu menerima <span className="font-bold text-green-700 underline cursor-pointer">Kebijakan Privasi</span> kami.
           </h6>
         </div>
+        <button class="py-[4%] px-[44%] text-xs uppercase tracking-wider font-bold text-white  bg-gray-300 rounded-md shadow-md transition duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-teal-800 hover:text-white hover:shadow-lg active:translate-y-1 mt-5">
+          Masuk
+        </button>
         <div className="flex gap-10 justify-center items-center mt-4">
           <div className="justify-center items-center mt-3  rounded-lg px-8 py-1 border border-gray-300">
             <img src={ICON_FB} className=" w-6   rounded-sm " />

@@ -7,18 +7,18 @@ export default function Profile() {
     <>
       <div className="relative">
         <main className="relative py-40">
-          <div className="absolute top-[-150px] left-0 w-full z-0">
+          <div className="absolute top-[-360px] left-0 w-full z-0">
             <img className="object-cover" src={SAMPUL} alt="Sampul" />
-            <h1 className="font-bold text-5xl poppins shadow-lg text-white relative bottom-80 justify-center text-center">My Profile</h1>
+            <h1 className="font-bold text-5xl poppins shadow-lg text-white relative bottom-60 justify-center text-center">My Profile</h1>
           </div>
-          <div className="relative rounded-full px-10 top-[23rem] ">
+          <div className="relative rounded-full items-center justify-center px-20 md:px-10 xl:top-[8rem] ">
             <img className=" absolute rounded-full h-48 w-48 border-4 shadow-sm" src={PROFIL} alt="" />
             <span className="relative ">
               <FaPlusCircle size={24} className="bg-white rounded-full absolute top-36 fill-[#224D54] left-[9.5rem] justify-end items-end" />
             </span>
           </div>
         </main>
-        <div className="w-full mx-auto mt-4 bg-white p-8 py-[26rem] border-gray-300 flex justify-between ">
+        <div className="w-full mx-auto mt-4 bg-white p-8 py-[15rem] border-gray-300 flex justify-between ">
           <div className="w-full border-2 rounded-lg p-8 bottom-20">
             <h4 className="mt-5 py-5 font-bold text-2xl">Informasi Pribadi</h4>
             <form action="" className="grid grid-cols-4 gap-4">
@@ -63,8 +63,12 @@ export default function Profile() {
                 <input type="text" className="w-full p-2 border border-gray-300 rounded mt-2 bg-gray-200 "></input>
               </div>
               <div className="flex gap-2">
-                <bottom className="px-6 py-1.5 bg-[#9B9B9B] hover:bg-[#F9841A] rounded-lg cursor-pointer transition-all duration-300">Batal</bottom>
-                <bottom className="px-6 py-1.5  bg-[#9B9B9B] hover:bg-[#F9841A] rounded-lg transition-all duration-300">Simpan</bottom>
+                <a href="#">
+                  <bottom className="px-6 py-1.5 bg-[#9B9B9B] hover:bg-[#f9381a] rounded-lg cursor-pointer transition-all duration-300">Batal</bottom>
+                </a>
+                <a href="/akun">
+                  <bottom className="px-6 py-1.5 hover:bg-[#ef6525] bg-[#F9841A] rounded-lg transition-all duration-300 cursor-pointer">Simpan</bottom>
+                </a>
               </div>
             </form>
           </div>

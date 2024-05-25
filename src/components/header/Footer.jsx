@@ -11,15 +11,15 @@ export default function Footer() {
         <div className="flex justify-between mt-5 px-8 bottom-15">
           <div className="text-[#224D54] font-bold text-2x1 mt-5">
             <a href="">
-              <button>Tentang Kami</button>
+              <button className="hover:text-[#F6841F] ">Tentang Kami</button>
             </a>
             <br />
             <a href="/Kebijakanprivasi">
-              <button>Kebijakan kami</button>
+              <button className="hover:text-[#F6841F] ">Kebijakan kami</button>
             </a>
             <br />
-            <a href="">
-              <button>FAQ</button>
+            <a href="/faq">
+              <button className="hover:text-[#F6841F] ">FAQ</button>
             </a>
           </div>
           <div className="mt-5">

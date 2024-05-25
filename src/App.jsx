@@ -13,6 +13,15 @@ import Inputikan from "./components/Inputikan";
 import Inputpakan from "./components/Inputpakan";
 import Inputpenjualan from "./components/Inputpenjualan";
 import Forum from "./pages/landing/Forum";
+import Faq from "./pages/landing/Faq";
+import Tabel1 from "./components/aset-faq/Tabel1";
+import Tabel2 from "./components/aset-faq/Tabel2";
+import Tabel3 from "./components/aset-faq/Tabel3";
+import Tabel4 from "./components/aset-faq/Tabel4";
+import Tabel5 from "./components/aset-faq/Tabel5";
+import Tabel6 from "./components/aset-faq/Tabel6";
+import Tabel7 from "./components/aset-faq/Tabel7";
+import Popupeditfoto from "./components/Popupeditfoto";
 import Footer from "./components/header/Footer";
 import Header from "./components/header/Header";
 
@@ -48,6 +57,7 @@ export default function App() {
                 <Route path="/inputpenjualan" element={<Inputpenjualan />} />
                 <Route path="/kebijakanprivasi" element={<Kebijakanprivasi />} />
                 <Route path="/forum" element={<Forum />} />
+                <Route path="/faq" element={<Faq />} />
               </Routes>
             </LayoutWithFooter>
           }
