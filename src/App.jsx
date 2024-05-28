@@ -22,6 +22,7 @@ import Tabel5 from "./components/aset-faq/Tabel5";
 import Tabel6 from "./components/aset-faq/Tabel6";
 import Tabel7 from "./components/aset-faq/Tabel7";
 import Popupeditfoto from "./components/Popupeditfoto";
+import Notification from "./components/header/Notification";
 import Footer from "./components/header/Footer";
 import Header from "./components/header/Header";
 

@@ -102,7 +102,7 @@ export default function Inputpakan() {
         </table>
         <div className="flex mt-2 gap-2">
           <bottom className=" relative left-[47rem] px-6 py-1.5 bg-[#d2d2d2] hover:bg-[#F9841A] rounded-lg cursor-pointer transition-all duration-300">Batal</bottom>
-          <bottom className="relative left-[47rem] px-6 py-1.5  bg-[#d2d2d2] hover:bg-[#F9841A] rounded-lg transition-all duration-300 cursor-pointer">Simpan</bottom>
+          <bottom className="relative left-[47rem] px-6 py-1.5 bg-[#F9841A] hover:bg-[#de6814] rounded-lg transition-all duration-300 cursor-pointer">Simpan</bottom>
         </div>
       </main>
     </>
