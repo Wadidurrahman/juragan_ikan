@@ -4,11 +4,11 @@ import LOGO from "../../assets/logojuraganikan.png";
 import PROFIL from "../../assets/profil.webp";
 
 const navigation = [
-  { name: "Pencatatan", href: "#", current: false },
+  { name: "Pencatatan", href: "/Pencatatan", current: false },
   { name: "Statistik", href: "#", current: false },
   { name: "Panduan", href: "#", current: false },
   { name: "Artikel", href: "#", current: false },
-  { name: "Forum", href: "#", current: false },
+  { name: "Forum", href: "/forum", current: false },
 ];
 
 function classNames(...classes) {
@@ -20,7 +20,7 @@ export default function Header() {
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-            <div className="relative flex h-16 items-center justify-between">
+            <div className="relative flex h-10 items-center justify-between">
               <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
@@ -39,7 +39,7 @@ export default function Header() {
                       <a
                         key={item.name}
                         href={item.href}
-                        className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-700 hover:text-white", "rounded-md px-3 py-2 text-sm font-medium")}
+                        className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-200 hover:text-[#F6841F] ", "rounded-md px-3 py-2 text-sm font-bold")}
                         aria-current={item.current ? "page" : undefined}
                       >
                         {item.name}
@@ -49,17 +49,19 @@ export default function Header() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex gap-2 items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                <button type="button" className="relative rounded-full bg-gray-800 p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                <button type="button" className="relative rounded-full p-1 text-yellow-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
+                  <BellIcon className="h-6 w-6 fill-[#ffbf00] " aria-hidden="true" />
                 </button>
 
-                <button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                  <span className="absolute -inset-1.5" />
-                  <span className="sr-only">Open user </span>
-                  <img className="h-8 w-8 rounded-full" src={PROFIL} alt="" />
-                </button>
+                <a href="/akun">
+                  <button className="relative flex rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
+                    <span className="absolute -inset-1.5" />
+                    <span className="sr-only">Open user </span>
+                    <img className="h-8 w-8 rounded-full" src={PROFIL} alt="" />
+                  </button>
+                </a>
                 {/* Profile dropdown */}
               </div>
             </div>

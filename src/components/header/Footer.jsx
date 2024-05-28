@@ -10,9 +10,17 @@ export default function Footer() {
         <hr></hr>
         <div className="flex justify-between mt-5 px-8 bottom-15">
           <div className="text-[#224D54] font-bold text-2x1 mt-5">
-            <h4>Tentang Kami</h4>
-            <h4>Kebijakan kami</h4>
-            <h4>FAQ</h4>
+            <a href="">
+              <button className="hover:text-[#F6841F] ">Tentang Kami</button>
+            </a>
+            <br />
+            <a href="/Kebijakanprivasi">
+              <button className="hover:text-[#F6841F] ">Kebijakan kami</button>
+            </a>
+            <br />
+            <a href="/faq">
+              <button className="hover:text-[#F6841F] ">FAQ</button>
+            </a>
           </div>
           <div className="mt-5">
             <h4 className="font-semibold">Subscribe Our Newsletter</h4>
@@ -25,9 +33,9 @@ export default function Footer() {
               </div>
               <span className="relative ">
                 <div className="flex py-2 gap-2 justify-end">
-                  <FaInstagram size={24}></FaInstagram>
-                  <FaWhatsapp size={24}></FaWhatsapp>
-                  <ImMail2 size={24}></ImMail2>
+                  <FaInstagram size={24} className="cursor-pointer fill-[#224D54]"></FaInstagram>
+                  <FaWhatsapp size={24} className="cursor-pointer fill-[#224D54]"></FaWhatsapp>
+                  <ImMail2 size={24} className="cursor-pointer fill-[#224D54]"></ImMail2>
                 </div>
               </span>
             </table>
