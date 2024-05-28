@@ -36,15 +36,15 @@ export default function Faq() {
           {faqData.map((item, index) => (
             <div key={index} className="relative w-[52rem] border-2 border-[#224D54] rounded-lg p-2 left-[14rem] mb-5">
               <div className="relative gap-1 justify-between items-center">
-                <div className="flex">
+                <div className="flex items-center">
                   <h4 className="text-sm py-2 px-2">{item.title}</h4>
-                  <button onClick={() => toggleDropdown(index)} className="relative bottom-1 right-0 py-1">
-                    {dropdownOpen[index] ? <IoIosArrowDown size={30} className="fill-[#224D54]" /> : <IoIosArrowForward size={30} className="fill-[#224D54]" />}
+                  <button onClick={() => toggleDropdown(index)} className="ml-auto">
+                    {dropdownOpen[index] ? <IoIosArrowDown size={20} className="fill-[#224D54]" /> : <IoIosArrowForward size={20} className="fill-[#224D54]" />}
                   </button>
                 </div>
                 {dropdownOpen[index] && (
                   <div className="relative mt-5 bg-[#E3E4E8] border rounded-lg shadow-lg">
-                    <div className="p-4">{item.content}</div> {/* Mengakses konten sesuai dengan indeks */}
+                    <div className="p-4">{item.content}</div>
                   </div>
                 )}
               </div>

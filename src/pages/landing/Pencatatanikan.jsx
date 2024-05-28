@@ -13,7 +13,7 @@ export default function Pencatatanikan() {
           <div className="relative right-28 mt-3">
             <h2 className="relative font-bold text-[25px] py-0">Pencatatan Data Ikan</h2>
           </div>
-          <div className="relative flex flex-col items-start left-80 mt-3">
+          <div className="relative flex flex-col items-start left-80 mt-3" style={{ direction: "ltr" }}>
             <h3 className="text-gray-500 ">Total</h3>
             <output className="font-bold text-xl" id="Total-ikan">
               15.000
@@ -23,14 +23,11 @@ export default function Pencatatanikan() {
         </div>
         <div>
           <div className="relative flex items-center gap-2 p-2 -m-36 px-44">
-            {/* Search Input */}
-            <input type="text" placeholder="Search..." className="border rounded-lg p-2 focus:outline-none focus:ring focus:border-blue-300" />
-
             {/* DatePicker */}
             <DatePicker selected={selectedDate} onChange={(date) => setSelectedDate(date)} className="border rounded-lg p-2 focus:outline-none focus:ring focus:border-green-800" placeholderText="Pilih Tanggal" />
 
             {/* Add Icon */}
-            <div className="relative left-[40rem]">
+            <div className="relative left-[53rem]">
               <a href="Inputikan">
                 <button className=" items-center justify-center p-2 bg-[#F9841A] text-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring focus:border-orange-600 transition-all duration-300">
                   <IoIosAdd size={20} />
