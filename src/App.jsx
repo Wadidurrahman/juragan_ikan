@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 import Login from "./pages/Login/Login";
 import Registerasi from "./pages/Login/Registerasi";
+import Landingpage from "./pages/landing/Landingpage";
 import Profile from "./pages/landing/Profile";
 import Akun from "./pages/landing/Akun";
 import Pencatatan from "./pages/landing/Pencatatan";
@@ -22,6 +23,7 @@ import Tabel5 from "./components/aset-faq/Tabel5";
 import Tabel6 from "./components/aset-faq/Tabel6";
 import Tabel7 from "./components/aset-faq/Tabel7";
 import Popupeditfoto from "./components/Popupeditfoto";
+import Notification from "./components/header/Notification";
 import Footer from "./components/header/Footer";
 import Header from "./components/header/Header";
 
@@ -46,6 +48,7 @@ export default function App() {
           element={
             <LayoutWithFooter>
               <Routes>
+                <Route path="/landingpage" element={<Landingpage />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/akun" element={<Akun />} />
                 <Route path="/pencatatan" element={<Pencatatan />} />
