@@ -25,7 +25,7 @@ export default function Header() {
     setShowNotification(true);
     setTimeout(() => {
       setShowNotification(false);
-    }, 7000);
+    }, 100000);
   };
 
   const handleCloseNotification = () => {
@@ -58,7 +58,7 @@ export default function Header() {
                         <a
                           key={item.name}
                           href={item.href}
-                          className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300 hover:bg-gray-200 hover:text-[#F6841F] ", "rounded-md px-3 py-2 text-sm font-bold")}
+                          className={classNames(item.current ? "bg-gray-900 text-white" : "text-gray-300  hover:text-[#F6841F] ", "rounded-md px-3 py-2 text-sm font-bold")}
                           aria-current={item.current ? "page" : undefined}
                         >
                           {item.name}
