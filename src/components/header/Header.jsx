@@ -8,7 +8,7 @@ import Notification from "./Notification";
 const navigation = [
   { name: "Pencatatan", href: "/Pencatatan", current: false },
   { name: "Statistik", href: "#", current: false },
-  { name: "Panduan", href: "#", current: false },
+  { name: "Panduan", href: "/panduan", current: false },
   { name: "Artikel", href: "#", current: false },
   { name: "Forum", href: "/forum", current: false },
 ];

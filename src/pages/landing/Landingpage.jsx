@@ -4,26 +4,25 @@ import BackgroundUtama from "../../assets/aset-landingpage/Background.png";
 import Imgside from "../../assets/aset-landingpage/img-aset.png";
 import Imgartikel2 from "../../assets/aset-landingpage/img-artikel2.jpg";
 import Imgartikel3 from "../../assets/aset-landingpage/img-artikel3.jpg";
-import { MdArrowBackIos } from "react-icons/md";
-import { MdArrowForwardIos } from "react-icons/md";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function NextArrow(props) {
   const { onClick } = props;
   return (
-    <div className="absolute right-4 top-24  z-10 cursor-pointer" onClick={onClick}>
+    <button className="absolute right-4 top-24 z-10 cursor-pointer" onClick={onClick} aria-label="Next Slide">
       <MdArrowForwardIos className="text-4xl bg-[#F9841A] text-white px-1 py-2" />
-    </div>
+    </button>
   );
 }
 
 function PrevArrow(props) {
   const { onClick } = props;
   return (
-    <div className="absolute left-2 top-24 z-10 cursor-pointer" onClick={onClick}>
+    <button className="absolute left-2 top-24 z-10 cursor-pointer" onClick={onClick} aria-label="Previous Slide">
       <MdArrowBackIos className="text-4xl bg-[#F9841A] text-white px-1 py-2" />
-    </div>
+    </button>
   );
 }
 
@@ -55,146 +54,132 @@ export default function Landingpage() {
   };
 
   return (
-    <>
-      <main>
-        <div className="relative w-full h-screen">
-          <img className="object-cover w-full h-full" src={BackgroundUtama} alt="bg" />
-          <div className="relative text-left flex flex-col items-right px-12 top-[-23rem] z-10 h-full">
+    <main>
+      <div className="relative w-full h-screen">
+        <img className="object-cover w-full h-full" src={BackgroundUtama} alt="Background" />
+        <div className="absolute text-left flex flex-col items-right px-12 top-1/4 right-0 z-10 h-full">
+          <p>"Juragan Ikan" hadir sebagai solusi manajemen peternakan ikan yang komprehensif untuk membantu peternak mencapai hasil yang optimal dan memastikan kesejahteraan ikan.</p>
+          <a className="py-8" href="#">
+            <button className="mx-auto btn bg-[#224D54] text-white font-semibold py-2 p-4 rounded-full hover:bg-white hover:text-[#224D54] transition-all duration-300">Mulai Sekarang</button>
+          </a>
+        </div>
+      </div>
+      <article>
+        <div className="flex py-36 p-16">
+          <img className="h-80 rounded-lg object-cover" src={Imgside} alt="Gambar Samping" />
+          <div className="relative px-16 py-10">
+            <h4 className="text-2xl mb-5 font-semibold">Sudahkah kamu mencatat data peternakan ikan anda?</h4>
             <p>
-              "Juragan Ikan" hadir sebagai solusi manajemen peternakan ikan yang <br />
-              komprehensif untuk membantu peternak mencapai hasil yang optimal
-              <br /> dan memastikan kesejahteraan ikan.
+              Mulailah peternakan ikan Anda dengan langkah tepat bersama Juragan Ikan. Temukan panduan dan dukungan yang Anda butuhkan untuk memulai dan mengembangkan usaha Anda. Bergabunglah dengan komunitas kami hari ini dan mulailah
+              perjalanan Anda menuju sukses dalam budidaya ikan.
             </p>
-            <a className="py-8" href="#">
-              <button className="mx-auto btn bg-[#224D54] text-white font-semibold py-2 p-4 rounded-full hover:bg-white hover:text-[#224D54] transition-all duration-300">Mulai Sekarang</button>
-            </a>
           </div>
         </div>
-        <article>
-          <div className="flex py-36 p-16">
-            <img className="h-80 rounded-lg object-cover" src={Imgside} alt="" />
-            <div className="relative px-16 py-10">
-              <h4 className="text-2xl mb-5 font-semibold">Sudahkah kamu mencatat data ternakmu?</h4>
-              <p>
-                Mulailah peternakan ikan Anda dengan langkah tepat bersama Juragan Ikan. Temukan panduan dan dukungan yang Anda butuhkan untuk memulai dan mengembangkan usaha Anda. Bergabunglah dengan komunitas kami hari ini dan mulailah
-                perjalanan Anda menuju sukses dalam budidaya ikan.
-              </p>
-            </div>
-          </div>
-          <div className="relative px-28 top-[-20] text-center">
-            <div>
-              <h1 className="text-2xl mb-5 font-semibold">Kisah Kami</h1>
-              <p className="mb-5">
-                Berawal dari tekad dan impian untuk memberdayakan para peternak ikan, Juragan Ikan hadir sebagai solusi inovatif dalam pengelolaan pencatatan peternakan. Kami memahami bahwa salah satu tantangan utama yang dihadapi banyak
-                peternak ikan adalah kurangnya sistem pencatatan yang efektif. Penggunaan metode pencatatan manual yang masih banyak dilakukan seringkali tidak efisien dan rentan terhadap kesalahan. Hal ini dapat menghambat pelacakan
-                kinerja peternakan, pengambilan keputusan yang tepat, dan peningkatan produktivitas.
-              </p>
-              <p className="mb-5">
-                Didorong oleh keyakinan bahwa setiap orang berhak mengelola usahanya dengan mudah dan efisien, bebas dari stres dan kebingungan, Juragan Ikan hadir untuk membantu mewujudkan impian tersebut. Platform kami menyediakan alat
-                yang diperlukan untuk mencapai kemandirian dan stabilitas keuangan yang lebih baik bagi para peternak ikan.
-              </p>
-              <p>Web Pencatatan Juragan Ikan dirancang khusus untuk membantu peternak ikan mengelola dan memantau kegiatan peternakan mereka dengan lebih efektif</p>
-            </div>
-          </div>
+        <div className="relative px-28 text-center">
           <div>
-            <div className="text-center py-20">
-              <h1 className="font-semibold text-2xl mb-5">Artikel</h1>
-              <p>
-                Artikel budidaya ternak ikan tawar ini dapat membantu anda untuk
-                <br />
-                budidaya ikan tawar
-              </p>
-            </div>
-
-            <Slider {...settings}>
-              <div className="relative items-center mb-8 left-0 md:left-10">
-                <div className="px-10 ">
-                  <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgside} alt="" />
-                </div>
-                <div className="flex">
-                  <div className="relative left-10">
-                    <strong className="text-5xl px-4">17</strong>
-                    <h4 className="text-xs bg-[#F9841A] px-4 py-4 text-white font-semibold mt-4">Feb 2024</h4>
-                  </div>
-                  <div className="relative left-10">
-                    <h3 className="text-[14px] px-2 py-2 font-semibold">
-                      Panduan Komprehensif <br />
-                      untuk Memulai Peternak
-                    </h3>
-                    <p className="text-[12px] px-2 py-0">
-                      Jika Anda adalah seorang pemula yang <br />
-                      ingin memulai peternakan ikan, langkah
-                      <br />
-                      langkah berikut ini.
-                      <button>
-                        <a href="#" className="text-sm text-[#F9841A] font-bold px-2">
-                          Read More
-                        </a>
-                      </button>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative items-center mb-8 left-0 md:left-10">
-                <div className="px-8">
-                  <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgartikel2} alt="" />
-                </div>
-                <div className="flex">
-                  <div className="relative left-10">
-                    <strong className="text-5xl px-4">19</strong>
-                    <h4 className="text-xs bg-[#F9841A] px-4 py-4 text-white font-semibold mt-4">Feb 2024</h4>
-                  </div>
-                  <div className="relative left-10">
-                    <h3 className="text-[14px] px-2 py-2 font-semibold">
-                      Panduan Komprehensif <br />
-                      untuk Memulai Peternak
-                    </h3>
-                    <p className="text-[12px] px-2 py-0">
-                      Jika Anda adalah seorang pemula yang <br />
-                      ingin memulai peternakan ikan, langkah
-                      <br />
-                      langkah berikut ini.
-                      <button>
-                        <a href="#" className="text-sm text-[#F9841A] font-bold px-2">
-                          Read More
-                        </a>
-                      </button>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative items-center mb-8 left-0 md:right-8">
-                <div className="px-10">
-                  <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgartikel3} alt="" />
-                </div>
-                <div className="flex">
-                  <div className="relative left-10">
-                    <strong className="text-5xl px-4">24</strong>
-                    <h4 className="text-xs bg-[#F9841A] px-4 py-4 text-white font-semibold mt-4">Feb 2024</h4>
-                  </div>
-                  <div className="relative left-10">
-                    <h3 className="text-[14px] px-2 py-2 font-semibold">
-                      Panduan Komprehensif <br />
-                      untuk Memulai Peternak
-                    </h3>
-                    <p className="text-[12px] px-2 py-0">
-                      Jika Anda adalah seorang pemula yang <br />
-                      ingin memulai peternakan ikan, langkah
-                      <br />
-                      langkah berikut ini.
-                      <button>
-                        <a href="#" className="text-sm text-[#F9841A] font-bold px-2">
-                          Read More
-                        </a>
-                      </button>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </Slider>
+            <h1 className="text-2xl mb-5 font-semibold">Kisah Kami</h1>
+            <p className="mb-5">
+              Berawal dari tekad dan impian untuk memberdayakan para peternak ikan, Juragan Ikan hadir sebagai solusi inovatif dalam pengelolaan pencatatan peternakan. Kami memahami bahwa salah satu tantangan utama yang dihadapi banyak
+              peternak ikan adalah kurangnya sistem pencatatan yang efektif. Penggunaan metode pencatatan manual yang masih banyak dilakukan seringkali tidak efisien dan rentan terhadap kesalahan. Hal ini dapat menghambat pelacakan kinerja
+              peternakan, pengambilan keputusan yang tepat, dan peningkatan produktivitas.
+            </p>
+            <p className="mb-5">
+              Didorong oleh keyakinan bahwa setiap orang berhak mengelola usahanya dengan mudah dan efisien, bebas dari stres dan kebingungan, Juragan Ikan hadir untuk membantu mewujudkan impian tersebut. Platform kami menyediakan alat yang
+              diperlukan untuk mencapai kemandirian dan stabilitas keuangan yang lebih baik bagi para peternak ikan.
+            </p>
+            <p>Web Pencatatan Juragan Ikan dirancang khusus untuk membantu peternak ikan mengelola dan memantau kegiatan peternakan mereka dengan lebih efektif.</p>
           </div>
-        </article>
-      </main>
-    </>
+        </div>
+        <div>
+          <div className="text-center py-20">
+            <h1 className="font-semibold text-2xl mb-5">Artikel</h1>
+            <p>Artikel budidaya ternak ikan tawar ini dapat membantu anda untuk budidaya ikan tawar.</p>
+          </div>
+          <Slider {...settings}>
+            <div className="relative items-center mb-8 px-4">
+              <div className="px-10">
+                <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgside} alt="Gambar Artikel" />
+              </div>
+              <div className="flex">
+                <div className="relative left-10">
+                  <strong className="text-5xl px-4">17</strong>
+                  <h4 className="text-xs bg-[#F9841A] px-4 py-4 text-white font-semibold mt-4">Feb 2024</h4>
+                </div>
+                <div className="relative left-10">
+                  <h3 className="text-[14px] px-2 py-2 font-semibold">
+                    Panduan Komprehensif <br />
+                    untuk Memulai Peternak
+                  </h3>
+                  <p className="text-[12px] px-2 py-0">
+                    Jika Anda adalah seorang pemula yang <br />
+                    ingin memulai peternakan ikan, langkah <br />
+                    langkah berikut ini.
+                    <button>
+                      <a href="#" className="text-sm text-[#F9841A] font-bold px-2">
+                        Read More
+                      </a>
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="relative items-center mb-8 px-4">
+              <div className="px-8">
+                <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgartikel2} alt="Gambar Artikel 2" />
+              </div>
+              <div className="flex">
+                <div className="relative left-10">
+                  <strong className="text-5xl px-4">19</strong>
+                  <h4 className="text-xs bg-[#F9841A] px-4 py-4 text-white font-semibold mt-4">Feb 2024</h4>
+                </div>
+                <div className="relative left-10">
+                  <h3 className="text-[14px] px-2 py-2 font-semibold">
+                    Panduan Komprehensif <br />
+                    untuk Memulai Peternak
+                  </h3>
+                  <p className="text-[12px] px-2 py-0">
+                    Jika Anda adalah seorang pemula yang <br />
+                    ingin memulai peternakan ikan, langkah <br />
+                    langkah berikut ini.
+                    <button>
+                      <a href="#" className="text-sm text-[#F9841A] font-bold px-2">
+                        Read More
+                      </a>
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="relative items-center mb-8 px-4">
+              <div className="px-10">
+                <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgartikel3} alt="Gambar Artikel 3" />
+              </div>
+              <div className="flex">
+                <div className="relative left-10">
+                  <strong className="text-5xl px-4">24</strong>
+                  <h4 className="text-xs bg-[#F9841A] px-4 py-4 text-white font-semibold mt-4">Feb 2024</h4>
+                </div>
+                <div className="relative left-10">
+                  <h3 className="text-[14px] px-2 py-2 font-semibold">
+                    Panduan Komprehensif <br />
+                    untuk Memulai Peternak
+                  </h3>
+                  <p className="text-[12px] px-2 py-0">
+                    Jika Anda adalah seorang pemula yang <br />
+                    ingin memulai peternakan ikan, langkah <br />
+                    langkah berikut ini.
+                    <button>
+                      <a href="#" className="text-sm text-[#F9841A] font-bold px-2">
+                        Read More
+                      </a>
+                    </button>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </Slider>
+        </div>
+      </article>
+    </main>
   );
 }

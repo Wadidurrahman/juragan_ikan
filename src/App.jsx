@@ -3,9 +3,14 @@ import React from "react";
 import Login from "./pages/Login/Login";
 import Registerasi from "./pages/Login/Registerasi";
 import Landingpage from "./pages/landing/Landingpage";
+import Homepage from "./pages/landing/Homepage";
+import Aboutus from "./pages/landing/Aboutus";
 import Profile from "./pages/landing/Profile";
 import Akun from "./pages/landing/Akun";
 import Pencatatan from "./pages/landing/Pencatatan";
+import Statistik from "./pages/landing/Statistik";
+import Panduan from "./pages/landing/Panduan";
+import Halartikel from "./pages/landing/Halartikel";
 import Pencatatnikan from "./pages/landing/Pencatatanikan";
 import Pencatatanpakan from "./pages/landing/Pencatatanpakan";
 import Pencatatanpenjualan from "./pages/landing/Pecatatanpenjualan";
@@ -49,9 +54,14 @@ export default function App() {
             <LayoutWithFooter>
               <Routes>
                 <Route path="/landingpage" element={<Landingpage />} />
+                <Route path="/homepage" element={<Homepage />} />
+                <Route path="/aboutus" element={<Aboutus />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/akun" element={<Akun />} />
                 <Route path="/pencatatan" element={<Pencatatan />} />
+                <Route path="/statistik" element={<Statistik />} />
+                <Route path="/panduan" element={<Panduan />} />
+                <Route path="/halartikel" element={<Halartikel />} />
                 <Route path="/pencatatanikan" element={<Pencatatnikan />} />
                 <Route path="/pencatatanpakan" element={<Pencatatanpakan />} />
                 <Route path="/pencatatanpenjualan" element={<Pencatatanpenjualan />} />
