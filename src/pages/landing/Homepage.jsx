@@ -14,6 +14,19 @@ import { MdArrowForwardIos } from "react-icons/md";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+const Judul = {
+  judul: ["Juragan", "Ikan"],
+  Discripsi: ["Juragan Ikan hadir sebagai solusi manajemen peternakan ikan yang komprehensif untuk membantu peternak mencapai hasil yang optimal dan memastikan kesejahteraan ikan"],
+};
+
+const artikel = {
+  isi: [
+    "Berawal dari tekad dan impian untuk memberdayakan para peternak ikan, Juragan Ikan hadir sebagai solusi inovatif dalam pengelolaan pencatatan peternakan. Kami memahami bahwa salah satu tantangan utama yang dihadapi banya peternak ikan adalah kurangnya sistem pencatatan yang efektif. Penggunaan metode pencatatan manual yang masih banyak dilakukan seringkali tidak efisien dan rentan terhadap kesalahan. Hal ini dapat menghambat pelacakan kinerjapeternakan, pengambilan keputusan yang tepat, dan peningkatan produktivitas.",
+    " Didorong oleh keyakinan bahwa setiap orang berhak mengelola usahanya dengan mudah dan efisien, bebas dari stres dan kebingungan, Juragan Ikan hadir untuk membantu mewujudkan impian tersebut. Platform kami menyediakan alat yang diperlukan untuk mencapai kemandirian dan stabilitas keuangan yang lebih baik bagi para peternak ikan.",
+    "Web Pencatatan Juragan Ikan dirancang khusus untuk membantu peternak ikan mengelola dan memantau kegiatan peternakan mereka dengan lebih efektif",
+  ],
+};
+
 function NextArrow(props) {
   const { onClick } = props;
   return (
@@ -65,15 +78,11 @@ export default function Homepage() {
           <img className="w-full object-cover" src={Backgroundcover} alt="" />
           <div className="relative top-[-32rem] items-center px-12">
             <h1 className="text-7xl font-extrabold text-[#224D54]">
-              Juragan
+              {Judul.judul[0]}
               <br />
-              <span className="text-7xl font-extrabold text-[#F9841A]">Ikan</span>
+              <span className="text-7xl font-extrabold text-[#F9841A]"> {Judul.judul[1]}</span>
             </h1>
-            <p className="mt-4">
-              "Juragan Ikan" hadir sebagai solusi manajemen peternakan ikan yang
-              <br /> komprehensif untuk membantu peternak mencapai hasil yang optimal
-              <br /> dan memastikan kesejahteraan ikan.
-            </p>
+            <p className="mt-4 lg:w-1/2">{Judul.Discripsi}</p>
             <div className="relative top-5">
               <a>
                 <buttom className="btn bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400">Mulai Sekarang</buttom>
@@ -143,26 +152,16 @@ export default function Homepage() {
         <div className="relative px-28 top-[-20] text-center">
           <div>
             <h1 className="text-2xl mb-5 font-semibold">Kisah Kami</h1>
-            <p className="mb-5">
-              Berawal dari tekad dan impian untuk memberdayakan para peternak ikan, Juragan Ikan hadir sebagai solusi inovatif dalam pengelolaan pencatatan peternakan. Kami memahami bahwa salah satu tantangan utama yang dihadapi banyak
-              peternak ikan adalah kurangnya sistem pencatatan yang efektif. Penggunaan metode pencatatan manual yang masih banyak dilakukan seringkali tidak efisien dan rentan terhadap kesalahan. Hal ini dapat menghambat pelacakan kinerja
-              peternakan, pengambilan keputusan yang tepat, dan peningkatan produktivitas.
-            </p>
-            <p className="mb-5">
-              Didorong oleh keyakinan bahwa setiap orang berhak mengelola usahanya dengan mudah dan efisien, bebas dari stres dan kebingungan, Juragan Ikan hadir untuk membantu mewujudkan impian tersebut. Platform kami menyediakan alat yang
-              diperlukan untuk mencapai kemandirian dan stabilitas keuangan yang lebih baik bagi para peternak ikan.
-            </p>
-            <p>Web Pencatatan Juragan Ikan dirancang khusus untuk membantu peternak ikan mengelola dan memantau kegiatan peternakan mereka dengan lebih efektif</p>
+            <p className="mb-5">{artikel.isi[0]}</p>
+            <p className="mb-5">{artikel.isi[1]}</p>
+            <p>{artikel.isi[2]}</p>
           </div>
         </div>
         <div>
-          <div className="text-center py-20">
+          <div className="flex flex-col justify-center items-center py-20 text-center">
             <h1 className="font-semibold text-2xl mb-5">Artikel</h1>
-            <p>
-              Artikel budidaya ternak ikan tawar ini dapat membantu anda untuk
-              <br />
-              budidaya ikan tawar
-            </p>
+            <p className="mb-2">Artikel budidaya ternak ikan tawar ini dapat membantu anda untuk</p>
+            <p>budidaya ikan tawar</p>
           </div>
 
           <Slider {...settings}>

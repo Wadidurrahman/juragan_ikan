@@ -57,11 +57,22 @@ export default function Landingpage() {
     <main>
       <div className="relative w-full h-screen">
         <img className="object-cover w-full h-full" src={BackgroundUtama} alt="Background" />
-        <div className="absolute text-left flex flex-col items-right px-12 top-1/4 right-0 z-10 h-full">
-          <p>"Juragan Ikan" hadir sebagai solusi manajemen peternakan ikan yang komprehensif untuk membantu peternak mencapai hasil yang optimal dan memastikan kesejahteraan ikan.</p>
-          <a className="py-8" href="#">
-            <button className="mx-auto btn bg-[#224D54] text-white font-semibold py-2 p-4 rounded-full hover:bg-white hover:text-[#224D54] transition-all duration-300">Mulai Sekarang</button>
-          </a>
+        <div className="relative top-[-32rem] items-center px-12">
+          <h1 className="text-7xl font-extrabold text-[#224D54]">
+            Juragan
+            <br />
+            <span className="text-7xl font-extrabold text-[#F9841A]">Ikan</span>
+          </h1>
+          <p className="mt-4">
+            "Juragan Ikan" hadir sebagai solusi manajemen peternakan ikan yang
+            <br /> komprehensif untuk membantu peternak mencapai hasil yang optimal
+            <br /> dan memastikan kesejahteraan ikan.
+          </p>
+          <div className="relative top-5">
+            <a>
+              <buttom className="btn bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400">Mulai Sekarang</buttom>
+            </a>
+          </div>
         </div>
       </div>
       <article>

@@ -7,13 +7,11 @@ const Notification = ({ message, show, onClose }) => {
     onClose();
   };
 
-  // Fungsi untuk mendapatkan keterangan waktu
   const getTimeDescription = () => {
     const currentDate = new Date();
-    const currentDay = currentDate.getDay(); // Hari - minggu
-    const currentMonth = currentDate.getMonth(); // Bulan - setahun
+    const currentDay = currentDate.getDay();
+    const currentMonth = currentDate.getMonth();
 
-    // Menggunakan currentDay dan currentMonth untuk keterangan waktu
     let timeDescription = "";
     switch (currentDay) {
       case 0:
@@ -41,7 +39,6 @@ const Notification = ({ message, show, onClose }) => {
         <div className="flex ">
           <BsCircleFill size={24} className="text-[#F78A27]" />
           <p>{message}</p>
-          {/* Menampilkan keterangan waktu */}
           <div className="text-sm text-black px-4">Selamat Anda berhasil login di web Juragan Ikan.com!</div>
         </div>
         <div className="text-sm text-gray-500 px-8 py-5 ">Login {getTimeDescription()}</div>

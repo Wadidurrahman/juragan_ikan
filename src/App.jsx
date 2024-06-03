@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import React from "react";
 import Login from "./pages/Login/Login";
 import Registerasi from "./pages/Login/Registerasi";
@@ -9,6 +9,7 @@ import Profile from "./pages/landing/Profile";
 import Akun from "./pages/landing/Akun";
 import Pencatatan from "./pages/landing/Pencatatan";
 import Statistik from "./pages/landing/Statistik";
+import { BarChart } from "recharts";
 import Panduan from "./pages/landing/Panduan";
 import Halartikel from "./pages/landing/Halartikel";
 import Pencatatnikan from "./pages/landing/Pencatatanikan";
@@ -32,10 +33,10 @@ import Notification from "./components/header/Notification";
 import Footer from "./components/header/Footer";
 import Header from "./components/header/Header";
 
-function LayoutWithFooter({ children }) {
+function LayoutWithFooter({ children, noBackground }) {
   return (
     <>
-      <Header />
+      <Header noBackground={noBackground} />
       {children}
       <Footer />
     </>

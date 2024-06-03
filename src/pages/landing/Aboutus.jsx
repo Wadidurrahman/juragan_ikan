@@ -43,7 +43,7 @@ export default function Aboutus() {
               <img className="w-40 h-52 rounded-lg mb-4 object-cover" src={Imgteam2} alt="Wadidur Rahman" />
               <div className="text-center">
                 <h3 className="text-sm text-gray-500">Putri Lutfiasari</h3>
-                <p className="text-sm text-gray-500">Hipster</p>
+                <p className="text-sm text-gray-500">Hilster</p>
               </div>
             </div>
             <div className="flex flex-col items-center">
