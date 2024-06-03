@@ -10,7 +10,7 @@ export default function Footer() {
         <hr></hr>
         <div className="flex justify-between mt-5 px-8 bottom-15">
           <div className="text-[#224D54] font-bold text-2x1 mt-5">
-            <a href="">
+            <a href="/aboutus">
               <button className="hover:text-[#F6841F] ">Tentang Kami</button>
             </a>
             <br />
