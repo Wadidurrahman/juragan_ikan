@@ -16,7 +16,7 @@ export default function Statistik() {
     if (chartPemasukanRef.current) {
       const ctx = chartPemasukanRef.current.getContext("2d");
       if (chartPemasukan) {
-        chartPemasukan.destroy(); // Destroy previous instance
+        chartPemasukan.destroy();
       }
       chartPemasukan = new Chart(ctx, {
         type: "bar",
@@ -74,7 +74,7 @@ export default function Statistik() {
     if (chartPengeluaranRef.current) {
       const ctx = chartPengeluaranRef.current.getContext("2d");
       if (chartPengeluaran) {
-        chartPengeluaran.destroy(); // Destroy previous instance
+        chartPengeluaran.destroy();
       }
       chartPengeluaran = new Chart(ctx, {
         type: "bar",
@@ -139,7 +139,7 @@ export default function Statistik() {
   }, []);
 
   return (
-    <main>
+    <main className="bg-[#ffffff]">
       <section className="relative w-full h-screen">
         <img className="w-full h-[26rem] object-cover" src={Bg} alt="background" />
         <div className="absolute inset-0 bg-black opacity-50 h-[26rem]"></div>
@@ -152,14 +152,13 @@ export default function Statistik() {
         </div>
       </section>
       <div className="flex justify-center w-full items-center gap-10 py-8">
-        {/* Chart Pemasukan */}
         <div className="flex flex-col w-[37.5%] rounded-lg py-4 shadow-lg">
           <h2 className="text-[#224D54] px-3 font-bold text-2xl">Grafik Penjualan Ikan</h2>
           <p className="text-xs font-semibold px-3 text-[#4F4F4F]">Total Penjualan</p>
           <hr className="relative  w-[80vh] my-3 " />
           <canvas ref={chartPemasukanRef} className="w-full"></canvas>
         </div>
-        {/* Chart Pengeluaran */}
+
         <div className="flex flex-col w-[37.5%]  rounded-lg py-4 shadow-lg">
           <h2 className="text-[#224D54] px-3 font-bold text-2xl">Grafik Pengeluaran Pakan</h2>
           <p className="text-xs font-semibold px-3 text-[#4F4F4F]">Total Penjualan</p>
@@ -168,7 +167,7 @@ export default function Statistik() {
         </div>
       </div>
       <section>
-        <div className="relative flex justify-center items-center h-full py-20 gap-10 top-[-4rem] ">
+        <div className="relative flex justify-center items-center h-full py-20 gap-10 top-22 ">
           <div className="flex justify-center items-center px-12 py-4 shadow-lg bg-white rounded-md ">
             <div className="justify-center items-center">
               <h2 className="text-[#224D54] font-bold pb-10">

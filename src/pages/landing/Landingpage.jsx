@@ -11,7 +11,7 @@ import "slick-carousel/slick/slick-theme.css";
 function NextArrow(props) {
   const { onClick } = props;
   return (
-    <button className="absolute right-4 top-24 z-10 cursor-pointer" onClick={onClick} aria-label="Next Slide">
+    <button className="absolute right-10 top-[26rem] z-10 cursor-pointer" onClick={onClick} aria-label="Next Slide">
       <MdArrowForwardIos className="text-4xl bg-[#F9841A] text-white px-1 py-2" />
     </button>
   );
@@ -20,7 +20,7 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { onClick } = props;
   return (
-    <button className="absolute left-2 top-24 z-10 cursor-pointer" onClick={onClick} aria-label="Previous Slide">
+    <button className="absolute left-14 top-[26rem] z-10 cursor-pointer" onClick={onClick} aria-label="Previous Slide">
       <MdArrowBackIos className="text-4xl bg-[#F9841A] text-white px-1 py-2" />
     </button>
   );
@@ -70,7 +70,14 @@ export default function Landingpage() {
           </p>
           <div className="relative top-5">
             <a>
-              <buttom className="btn bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400">Mulai Sekarang</buttom>
+              <buttom
+                className="btn bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400"
+                onClick={() => {
+                  window.location.href = "login";
+                }}
+              >
+                Mulai Sekarang
+              </buttom>
             </a>
           </div>
         </div>
@@ -104,12 +111,15 @@ export default function Landingpage() {
         <div>
           <div className="text-center py-20">
             <h1 className="font-semibold text-2xl mb-5">Artikel</h1>
-            <p>Artikel budidaya ternak ikan tawar ini dapat membantu anda untuk budidaya ikan tawar.</p>
+            <p>
+              Artikel budidaya ternak ikan tawar ini dapat membantu anda <br />
+              untuk budidaya ikan tawar.
+            </p>
           </div>
           <Slider {...settings}>
-            <div className="relative items-center mb-8 px-4">
-              <div className="px-10">
-                <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgside} alt="Gambar Artikel" />
+            <div className="relative items-center mb-32 px-2">
+              <div className="rounded-lg block overflow-hidden">
+                <img className="w-90 h-60 mb-2 rounded-lg object-cover hover:scale-125 ease-in duration-150" src={Imgside} alt="Gambar Artikel" />
               </div>
               <div className="flex">
                 <div className="relative left-10">
@@ -135,8 +145,8 @@ export default function Landingpage() {
               </div>
             </div>
             <div className="relative items-center mb-8 px-4">
-              <div className="px-8">
-                <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgartikel2} alt="Gambar Artikel 2" />
+              <div className="rounded-lg block overflow-hidden">
+                <img className="w-90 h-60 mb-2 rounded-lg object-cover hover:scale-125 ease-in duration-150" src={Imgartikel2} alt="Gambar Artikel 2" />
               </div>
               <div className="flex">
                 <div className="relative left-10">
@@ -162,8 +172,8 @@ export default function Landingpage() {
               </div>
             </div>
             <div className="relative items-center mb-8 px-4">
-              <div className="px-10">
-                <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgartikel3} alt="Gambar Artikel 3" />
+              <div className="rounded-lg block overflow-hidden">
+                <img className="w-50 h-60 mb-2 rounded-lg object-cover hover:scale-125 ease-in duration-150" src={Imgartikel3} alt="Gambar Artikel 3" />
               </div>
               <div className="flex">
                 <div className="relative left-10">

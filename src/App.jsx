@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import React from "react";
 import Login from "./pages/Login/Login";
 import Registerasi from "./pages/Login/Registerasi";
@@ -50,12 +50,26 @@ export default function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/registerasi" element={<Registerasi />} />
         <Route
+          path="/landingpage"
+          element={
+            <LayoutWithFooter noBackground={false}>
+              <Landingpage />
+            </LayoutWithFooter>
+          }
+        />
+        <Route
+          path="/homepage"
+          element={
+            <LayoutWithFooter noBackground={false}>
+              <Homepage />
+            </LayoutWithFooter>
+          }
+        />
+        <Route
           path="*"
           element={
-            <LayoutWithFooter>
+            <LayoutWithFooter noBackground={false}>
               <Routes>
-                <Route path="/landingpage" element={<Landingpage />} />
-                <Route path="/homepage" element={<Homepage />} />
                 <Route path="/aboutus" element={<Aboutus />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/akun" element={<Akun />} />
