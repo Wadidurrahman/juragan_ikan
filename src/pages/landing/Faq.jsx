@@ -15,7 +15,6 @@ export default function Faq() {
     setDropdownOpen((prevState) => prevState.map((isOpen, i) => (i === index ? !isOpen : isOpen)));
   };
 
-  // Data untuk setiap dropdown
   const faqData = [
     { title: "Apa Itu Juragan Ikan ?", content: <Tabel1 /> },
     { title: "Apa manfaat utama menggunakan website ini ?", content: <Tabel2 /> },

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Slider from "react-slick";
 import Backgroundcover from "../../assets/aset-landingpage/Background.png";
 import Iconikan from "../../assets/Asetpencatatan/icon ikan.png";
@@ -11,8 +11,10 @@ import Imgartikel2 from "../../assets/aset-landingpage/img-artikel2.jpg";
 import Imgartikel3 from "../../assets/aset-landingpage/img-artikel3.jpg";
 import { MdArrowBackIos } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
+import { FaTimes } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import Imgpopup from "../../assets/Asetpencatatan/icon ikan.png";
 
 const Judul = {
   judul: ["Juragan", "Ikan"],
@@ -30,7 +32,7 @@ const artikel = {
 function NextArrow(props) {
   const { onClick } = props;
   return (
-    <div className="absolute right-4 top-24  z-10 cursor-pointer" onClick={onClick}>
+    <div className="absolute right-14 top-[26rem]  z-10 cursor-pointer" onClick={onClick}>
       <MdArrowForwardIos className="text-4xl bg-[#F9841A] text-white px-1 py-2" />
     </div>
   );
@@ -39,13 +41,19 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { onClick } = props;
   return (
-    <div className="absolute left-2 top-24 z-10 cursor-pointer" onClick={onClick}>
+    <div className="absolute left-14 top-[26rem] z-10 cursor-pointer" onClick={onClick}>
       <MdArrowBackIos className="text-4xl bg-[#F9841A] text-white px-1 py-2" />
     </div>
   );
 }
 
 export default function Homepage() {
+  const [isPopupOpen, setIsPopupOpen] = useState(true);
+
+  const handleClosePopup = () => {
+    setIsPopupOpen(false);
+  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -71,6 +79,11 @@ export default function Homepage() {
       },
     ],
   };
+
+  const popup = {
+    Title: ["Recomendasi Ikan", "Apakah anda peternak baru dalam dunia peternakan ikan?"],
+  };
+
   return (
     <>
       <main>
@@ -85,11 +98,45 @@ export default function Homepage() {
             <p className="mt-4 lg:w-1/2">{Judul.Discripsi}</p>
             <div className="relative top-5">
               <a>
-                <buttom className="btn bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400">Mulai Sekarang</buttom>
+                <button
+                  className="btn bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400"
+                  onClick={() => {
+                    window.location.href = "pencatatan";
+                  }}
+                >
+                  Catat Sekarang
+                </button>
               </a>
             </div>
           </div>
         </div>
+
+        {isPopupOpen && (
+          <section className="absolute z-30 border items-center right-[22rem] top-40 bg-[#FBFDFF] px-11 py-8 rounded-lg shadow-lg ">
+            <div className="absolute top-4 right-4 cursor-pointer" onClick={handleClosePopup}>
+              <FaTimes className="text-2xl text-[#224D54]" />
+            </div>
+            <div className="relative justify-center items-center text-center">
+              <img className="relative objeck-cover items-center left-10" src={Imgpopup} alt="" />
+              <h1 className="text-3xl font-bold">{popup.Title[0]}</h1>
+              <p className="p-4 text-[#71757B]">{popup.Title[1]}</p>
+              <hr className="border-1 border-gray-400" />
+              <div className="flex justify-center gap-8 mt-4">
+                <button className="text-sm font-semibold text-[#224D54] shadow-lg border px-12 py-2 rounded-lg bg-[#DDE4E9]" onClick={handleClosePopup}>
+                  Tidak
+                </button>
+                <button
+                  className="text-sm font-semibold text-[#DDE4E9] shadow-lg border px-12 py-2 rounded-lg bg-[#224D54]"
+                  onClick={() => {
+                    window.location.href = "panduan";
+                  }}
+                >
+                  Iya
+                </button>
+              </div>
+            </div>
+          </section>
+        )}
         <div>
           <h1 className="relative items-center text-center justify-center font-semibold text-2xl top-20">Ringkasan Data</h1>
           <div className="relative flex justify-center items-center h-full p-20 gap-2 top-10">
@@ -165,9 +212,9 @@ export default function Homepage() {
           </div>
 
           <Slider {...settings}>
-            <div className="relative items-center mb-8 left-0 md:left-4">
-              <div className="px-10 ">
-                <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgside} alt="" />
+            <div className="relative items-center mb-36 left-0 md:left-4">
+              <div className="px-8 rounded-lg block overflow-hidden">
+                <img className="w-80 h-60 mb-2 rounded-lg object-cover transform transition-transform duration-500 hover:scale-125" src={Imgside} alt="" />
               </div>
               <div className="flex">
                 <div className="relative left-10">
@@ -194,8 +241,8 @@ export default function Homepage() {
               </div>
             </div>
             <div className="relative items-center mb-8 left-0 md:left-10">
-              <div className="px-8">
-                <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgartikel2} alt="" />
+              <div className="px-8 rounded-lg block overflow-hidden">
+                <img className="w-80 h-60 object-cover rounded-lg transform transition-transform duration-500 hover:scale-125" src={Imgartikel2} alt="" />
               </div>
               <div className="flex">
                 <div className="relative left-10">
@@ -222,8 +269,8 @@ export default function Homepage() {
               </div>
             </div>
             <div className="relative items-center mb-8 left-0 md:right-8">
-              <div className="px-10">
-                <img className="w-80 h-60 mb-2 rounded-lg object-cover" src={Imgartikel3} alt="" />
+              <div className="px-8 rounded-lg block overflow-hidden">
+                <img className="w-80 h-60 object-cover rounded-lg transform transition-transform duration-500 hover:scale-125" src={Imgartikel3} alt="" />
               </div>
               <div className="flex">
                 <div className="relative left-10">
