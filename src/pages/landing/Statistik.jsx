@@ -12,7 +12,6 @@ export default function Statistik() {
     let chartPemasukan;
     let chartPengeluaran;
 
-    // Chart Pemasukan
     if (chartPemasukanRef.current) {
       const ctx = chartPemasukanRef.current.getContext("2d");
       if (chartPemasukan) {
@@ -24,7 +23,7 @@ export default function Statistik() {
           labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags", "Sep", "Okt", "Nov", "Des"],
           datasets: [
             {
-              label: "Pemasukan",
+              label: "Grafik Penjualan Kecil",
               backgroundColor: "#63ABFD",
               borderColor: "#165BAA",
               borderWidth: 2,
@@ -33,56 +32,8 @@ export default function Statistik() {
               hoverBorderColor: "#63ABFD",
               data: Array.from({ length: 12 }, () => Math.floor(Math.random() * 11) * 10),
             },
-          ],
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: true,
-              min: 0,
-              max: 100,
-              grid: {
-                display: false,
-              },
-              ticks: {
-                font: {
-                  size: 14,
-                },
-              },
-            },
-            x: {
-              grid: {
-                display: false,
-              },
-              ticks: {
-                font: {
-                  size: 14,
-                },
-              },
-            },
-          },
-          plugins: {
-            legend: {
-              display: false,
-            },
-          },
-        },
-      });
-    }
-
-    // Chart Pengeluaran
-    if (chartPengeluaranRef.current) {
-      const ctx = chartPengeluaranRef.current.getContext("2d");
-      if (chartPengeluaran) {
-        chartPengeluaran.destroy();
-      }
-      chartPengeluaran = new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags", "Sep", "Okt", "Nov", "Des"],
-          datasets: [
             {
-              label: "Pengeluaran",
+              label: "Grafik Penjualan Besar",
               backgroundColor: "#E697FF",
               borderColor: "#A155B9",
               borderWidth: 2,
@@ -121,7 +72,74 @@ export default function Statistik() {
           },
           plugins: {
             legend: {
-              display: false,
+              display: true,
+            },
+          },
+        },
+      });
+    }
+
+    if (chartPengeluaranRef.current) {
+      const ctx = chartPengeluaranRef.current.getContext("2d");
+      if (chartPengeluaran) {
+        chartPengeluaran.destroy();
+      }
+      chartPengeluaran = new Chart(ctx, {
+        type: "bar",
+        data: {
+          labels: ["Jan", "Feb", "Mar", "Apr", "Mei", "Jun", "Jul", "Ags", "Sep", "Okt", "Nov", "Des"],
+          datasets: [
+            {
+              label: "Grafik Penjualan Kecil",
+              backgroundColor: "#63ABFD",
+              borderColor: "#165BAA",
+              borderWidth: 2,
+              borderRadius: 6,
+              hoverBackgroundColor: "#165BAA",
+              hoverBorderColor: "#63ABFD",
+              data: Array.from({ length: 12 }, () => Math.floor(Math.random() * 11) * 10),
+            },
+            {
+              label: "Grafik Penjualan Besar",
+              backgroundColor: "#E697FF",
+              borderColor: "#A155B9",
+              borderWidth: 2,
+              borderRadius: 6,
+              hoverBackgroundColor: "#A155B9",
+              hoverBorderColor: "#E697FF",
+              data: Array.from({ length: 12 }, () => Math.floor(Math.random() * 11) * 10),
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              beginAtZero: true,
+              min: 0,
+              max: 100,
+              grid: {
+                display: false,
+              },
+              ticks: {
+                font: {
+                  size: 14,
+                },
+              },
+            },
+            x: {
+              grid: {
+                display: false,
+              },
+              ticks: {
+                font: {
+                  size: 14,
+                },
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              display: true,
             },
           },
         },
@@ -161,7 +179,7 @@ export default function Statistik() {
 
         <div className="flex flex-col w-[37.5%]  rounded-lg py-4 shadow-lg">
           <h2 className="text-[#224D54] px-3 font-bold text-2xl">Grafik Pengeluaran Pakan</h2>
-          <p className="text-xs font-semibold px-3 text-[#4F4F4F]">Total Penjualan</p>
+          <p className="text-xs font-semibold px-3 text-[#4F4F4F]">Total Pengeluaran</p>
           <hr className="relative  w-[80vh] my-3 " />
           <canvas ref={chartPengeluaranRef} className="w-full"></canvas>
         </div>

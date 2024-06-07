@@ -26,8 +26,8 @@ export default function Forum() {
             <p>{Discripsi.isi[0]}</p>
             <p>{Discripsi.isi[1]}</p>
             <p className="mt-2">
-              Belum Punya Whatapps?
-              <span className="text-[#224D54] font-semibold" href="#">
+              Belum Punya Whatapps ?
+              <span className="text-[#224D54] font-semibold px-2" href="#">
                 Unduh
               </span>
             </p>
