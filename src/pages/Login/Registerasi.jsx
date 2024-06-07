@@ -38,8 +38,8 @@ export default function Registerasi() {
       <div className="text-center relative left-10 px-10 py-5">
         <p className="text-xl font-bold mt-5">Selamat Datang di Juragan</p>
         <div className="flex justify-center items-center text-sm mt-2">
-          <p> Sudah Punya Akun?</p>
-          <a href="/login" className=" text-green-700 font-bold cursor-pointer">
+          <p> Sudah Punya Akun ?</p>
+          <a href="/login" className=" text-green-700 px-1 font-bold cursor-pointer ">
             Masuk
           </a>
         </div>

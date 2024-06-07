@@ -35,8 +35,8 @@ export default function Login() {
       <div className="text-center relative left-10 px-10 py-5">
         <p className="text-lg font-bold mt-5">Selamat Datang di Juragan Ikan</p>
         <div className="flex justify-center items-center text-sm mt-2">
-          <p>Baru di Juragan Ikan?</p>
-          <Link to="/registerasi" className="text-green-700 font-bold cursor-pointer">
+          <p>Baru di Juragan Ikan ?</p>
+          <Link to="/registerasi" className="text-green-700 font-bold cursor-pointer px-1">
             Daftar Gratis
           </Link>
         </div>
@@ -75,6 +75,9 @@ export default function Login() {
           <button
             type="submit"
             className="py-4 w-[30rem] text-xs uppercase tracking-wider font-bold text-white bg-gray-300 rounded-md shadow-md transition duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-teal-800 hover:text-white hover:shadow-lg active:translate-y-1 mt-5"
+            onClick={() => {
+              window.location.href = "homepage";
+            }}
           >
             Masuk
           </button>
