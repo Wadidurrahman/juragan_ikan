@@ -15,6 +15,7 @@ import { FaTimes } from "react-icons/fa";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Imgpopup from "../../assets/Asetpencatatan/icon ikan.png";
+import Myslider from "../../components/Slide/Myslider";
 
 const Judul = {
   judul: ["Juragan", "Ikan"],
@@ -210,94 +211,8 @@ export default function Homepage() {
             <p className="mb-2">Artikel budidaya ternak ikan tawar ini dapat membantu anda untuk</p>
             <p>budidaya ikan tawar</p>
           </div>
-
-          <Slider {...settings}>
-            <div className="relative items-center mb-36 left-0 md:left-4">
-              <div className="px-8 rounded-lg block overflow-hidden">
-                <img className="w-80 h-60 mb-2 rounded-lg object-cover transform transition-transform duration-500 hover:scale-125" src={Imgside} alt="" />
-              </div>
-              <div className="flex">
-                <div className="relative left-10">
-                  <strong className="text-5xl px-4">17</strong>
-                  <h4 className="text-xs bg-[#F9841A] px-4 py-4 text-white font-semibold mt-4">Feb 2024</h4>
-                </div>
-                <div className="relative left-10">
-                  <h3 className="text-[14px] px-2 py-2 font-semibold">
-                    Panduan Komprehensif <br />
-                    untuk Memulai Peternak
-                  </h3>
-                  <p className="text-[12px] px-2 py-0">
-                    Jika Anda adalah seorang pemula yang <br />
-                    ingin memulai peternakan ikan, langkah
-                    <br />
-                    langkah berikut ini.
-                    <button>
-                      <a href="#" className="text-sm text-[#F9841A] font-bold px-2">
-                        Read More
-                      </a>
-                    </button>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="relative items-center mb-8 left-0 md:left-10">
-              <div className="px-8 rounded-lg block overflow-hidden">
-                <img className="w-80 h-60 object-cover rounded-lg transform transition-transform duration-500 hover:scale-125" src={Imgartikel2} alt="" />
-              </div>
-              <div className="flex">
-                <div className="relative left-10">
-                  <strong className="text-5xl px-4">19</strong>
-                  <h4 className="text-xs bg-[#F9841A] px-4 py-4 text-white font-semibold mt-4">Feb 2024</h4>
-                </div>
-                <div className="relative left-10">
-                  <h3 className="text-[14px] px-2 py-2 font-semibold">
-                    Panduan Komprehensif <br />
-                    untuk Memulai Peternak
-                  </h3>
-                  <p className="text-[12px] px-2 py-0">
-                    Jika Anda adalah seorang pemula yang <br />
-                    ingin memulai peternakan ikan, langkah
-                    <br />
-                    langkah berikut ini.
-                    <button>
-                      <a href="#" className="text-sm text-[#F9841A] font-bold px-2">
-                        Read More
-                      </a>
-                    </button>
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="relative items-center mb-8 left-0 md:right-8">
-              <div className="px-8 rounded-lg block overflow-hidden">
-                <img className="w-80 h-60 object-cover rounded-lg transform transition-transform duration-500 hover:scale-125" src={Imgartikel3} alt="" />
-              </div>
-              <div className="flex">
-                <div className="relative left-10">
-                  <strong className="text-5xl px-4">24</strong>
-                  <h4 className="text-xs bg-[#F9841A] px-4 py-4 text-white font-semibold mt-4">Feb 2024</h4>
-                </div>
-                <div className="relative left-10">
-                  <h3 className="text-[14px] px-2 py-2 font-semibold">
-                    Panduan Komprehensif <br />
-                    untuk Memulai Peternak
-                  </h3>
-                  <p className="text-[12px] px-2 py-0">
-                    Jika Anda adalah seorang pemula yang <br />
-                    ingin memulai peternakan ikan, langkah
-                    <br />
-                    langkah berikut ini.
-                    <button>
-                      <a href="#" className="text-sm text-[#F9841A] font-bold px-2">
-                        Read More
-                      </a>
-                    </button>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Slider>
         </div>
+        <Myslider />
       </main>
     </>
   );
