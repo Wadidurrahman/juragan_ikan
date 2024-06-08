@@ -2,24 +2,25 @@ import React from "react";
 import Discripsiimg from "../../assets/aset-img/imgelement.png";
 import Imgside from "../../assets/aset-img/imgelement2.png";
 import { HiCircleStack } from "react-icons/hi2";
+import Imgprofil from "../../assets/aset-aboutus/imgteam2.jpg";
 
 export default function Panduan() {
   return (
     <>
-      <main className="flex flex-col ">
-        <section className="relative items-center top-20 mb-20 py-20 left-80 w-full lg:w-1/2">
+      <main className="flex flex-col items-center lg:items-start">
+        <section className="relative items-center top-20 mb-20 py-20 px-4 lg:left-80 w-full lg:w-1/2">
           <h2 className="text-3xl font-bold lg:w-10/12">Panduan Komprehensif untuk Memulai Peternakan Ikan bagi Pemula</h2>
           <p className="text-sm font-semibold text-gray-500 mt-10">Langkah-Langkah Praktis</p>
           <div className="relative flex mt-8 gap-4 items-start">
-            <img className="bg-gray-400absolute rounded-full h-10 w-10 border-4 shadow-sm cursor-pointer" src="" alt="" />
-            <div>
+            <img className="bg-gray-400 absolute rounded-full h-10 w-10 border-4 shadow-sm cursor-pointer" src={Imgprofil} alt="" />
+            <div className="px-16  ">
               <p>By Putri Lutfiasari</p>
               <time>19 Maret, 2024</time>
             </div>
           </div>
-          <div className="relative w-full lg:w-10/11 mt-5 ">
+          <div className="relative w-full lg:w-10/11 mt-5">
             <p>Jika Anda adalah seorang pemula yang ingin memulai peternakan ikan, langkah-langkah berikut ini akan membantu Anda memulai perjalanan Anda dengan baik:</p>
-            <ul className="list-decimal pl-4 space-y-4 ">
+            <ul className="list-decimal pl-4 space-y-4">
               <li>
                 <p className="my-5">Penelitian dan Perencanaan</p>
                 <p>
@@ -38,9 +39,9 @@ export default function Panduan() {
                   ketersediaan oksigen yang cukup.
                 </p>
               </li>
-              <div className="flex">
-                <img className="relative right-10 w-fit object-cover" src={Discripsiimg} alt="discripsi-img" />
-                <div className="px-10">
+              <div className="flex flex-col lg:flex-row lg:items-start lg:gap-10">
+                <img className="w-full lg:w-auto object-cover mt-5 lg:mt-0" src={Discripsiimg} alt="discripsi-img" />
+                <div className="px-0 lg:px-10 mt-5 lg:mt-0">
                   <hr className="border-1 border-[#F9841A]" />
                   <p className="text-sm text-gray-400 mt-4">Ilustrasi Ikan Lele Jenis Ikan Air Tawar yang Populer dan Berkhasiat (Freepik.com/poringdown)</p>
                 </div>
@@ -88,10 +89,10 @@ export default function Panduan() {
             </p>
           </div>
         </section>
-        <section className="absolute top-[96rem] px-4">
-          <hr className="border-1 w-72 border-[#F9841A]" />
-          <img className="object-cover mt-5 rounded-lg" src={Imgside} alt="" />
-          <p className="text-sm text-gray-400 mt-4 lg:w-1/2 ">Ilustrasi Ikan Lele Jenis Ikan Air Tawar yang Populer dan Berkhasiat (Freepik.com/poringdown)</p>
+        <section className="w-full px-4 mt-10 lg:absolute lg:top-[96rem] lg:px-4">
+          <hr className="border-1 w-72 border-[#F9841A] mx-auto lg:mx-0" />
+          <img className="object-cover mt-5 rounded-lg w-full lg:w-auto" src={Imgside} alt="" />
+          <p className="text-sm text-gray-400 mt-4 lg:w-1/2 mx-auto lg:mx-0">Ilustrasi Ikan Lele Jenis Ikan Air Tawar yang Populer dan Berkhasiat (Freepik.com/poringdown)</p>
         </section>
       </main>
     </>

@@ -52,13 +52,13 @@ const Profile = () => {
   };
 
   return (
-    <div className="relative">
-      <main className="relative py-40">
-        <div className="absolute top-[-360px] left-0 w-full z-0">
-          <img className="object-cover" src={SAMPUL} alt="Sampul" />
-          <h1 className="font-bold text-5xl poppins shadow-lg text-white relative bottom-60 justify-center text-center">My Profile</h1>
+    <div>
+      <main className="relative">
+        <div className="relative lg:h-screen lg:items-start">
+          <img className="w-full sm:h-[20rem] lg:h-[25rem] object-cover " src={SAMPUL} alt="Sampul" />
+          <h1 className="font-bold text-5xl poppins  text-white relative bottom-60 justify-center text-center">My Profile</h1>
         </div>
-        <div className="relative rounded-full items-center justify-center px-20 md:px-10 xl:top-[10rem]">
+        <div className="relative rounded-full items-center justify-center px-20 md:px-10 md:-top-[10rem] lg:-top-[22rem]">
           <img className="absolute rounded-full h-48 w-48 border-4 shadow-sm" src={PROFIL} alt="Profil" />
           <div className="relative">
             <button className="relative" onClick={togglePopup}>
@@ -70,7 +70,7 @@ const Profile = () => {
         </div>
       </main>
 
-      <section className="w-full mx-auto mt-4 bg-white px-8 pt-10 xl:pt-[10rem] border-gray-300 flex justify-between">
+      <section className="w-full mt-2 bg-white px-8 border-gray-300 flex justify-between lg:-top-[20rem]">
         <div className="w-full border-2 rounded-lg p-8 bottom-20">
           <div className="flex gap-1 justify-between items-center">
             <div className="relative">

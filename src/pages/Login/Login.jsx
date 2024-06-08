@@ -7,17 +7,27 @@ import { Link } from "react-router-dom";
 
 export default function Login() {
   const [showNotification, setShowNotification] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [isChecked, setIsChecked] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const email = e.target.email.value;
-    const password = e.target.password.value;
     if (!email || !password) {
       setShowNotification(true);
       return;
     }
 
-    window.location.href = "landingpage";
+    const emailPattern = /\S+@\S+\.\S+/;
+    if (!emailPattern.test(email)) {
+      setShowNotification(true);
+      return;
+    }
+    window.location.href = "/homepage";
+  };
+
+  const handleCheckboxChange = () => {
+    setIsChecked(!isChecked);
   };
 
   useEffect(() => {
@@ -46,6 +56,8 @@ export default function Login() {
             <input
               type="email"
               name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="mt-1 px-2 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-ms focus:ring-1"
               placeholder="Your email@example.com"
             />
@@ -56,6 +68,8 @@ export default function Login() {
               <input
                 type="password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
                 className="mt-1 px-2 py-3 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1"
                 placeholder="Masukkan kata sandi"
               />
@@ -74,10 +88,10 @@ export default function Login() {
           )}
           <button
             type="submit"
-            className="py-4 w-[30rem] text-xs uppercase tracking-wider font-bold text-white bg-gray-300 rounded-md shadow-md transition duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-teal-800 hover:text-white hover:shadow-lg active:translate-y-1 mt-5"
-            onClick={() => {
-              window.location.href = "homepage";
-            }}
+            disabled={!email || !password || !isChecked}
+            className={`py-4 w-[30rem] text-xs uppercase tracking-wider font-bold text-white bg-gray-300 rounded-md shadow-md transition duration-300 ease-in-out cursor-pointer focus:outline-none ${
+              !email || !password || !isChecked ? "" : "bg-teal-800 hover:bg-teal-900 active:bg-teal-700"
+            } mt-5`}
           >
             Masuk
           </button>
@@ -97,7 +111,7 @@ export default function Login() {
         </div>
         <hr className="mt-3 border-t border-gray-300" />
         <div className="items-left flex mt-3">
-          <input type="checkbox" id="myCheckbox" className="form-checkbox h-4 w-5 text-blue-600" />
+          <input type="checkbox" id="myCheckbox" className="form-checkbox h-4 w-5 text-blue-600" checked={isChecked} onChange={handleCheckboxChange} />
           <label htmlFor="myCheckbox" className="px-2 text-sm text-gray-500">
             Ingatkan saya
           </label>
