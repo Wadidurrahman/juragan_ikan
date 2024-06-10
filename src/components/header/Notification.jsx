@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import { RxCross2 } from "react-icons/rx";
-import { BsCircleFill } from "react-icons/bs";
+import { BsCircleFill, BsTrash } from "react-icons/bs";
 
-const Notification = ({ message, show, onClose }) => {
+const Notification = ({ notifications, show, onClose, onDeleteAll }) => {
   const handleFileChange = (e) => {
     onClose();
   };
@@ -10,7 +10,6 @@ const Notification = ({ message, show, onClose }) => {
   const getTimeDescription = () => {
     const currentDate = new Date();
     const currentDay = currentDate.getDay();
-    const currentMonth = currentDate.getMonth();
 
     let timeDescription = "";
     switch (currentDay) {
@@ -29,19 +28,28 @@ const Notification = ({ message, show, onClose }) => {
 
   return (
     <div className={`${show ? "block" : "hidden"} fixed top-20 right-20 w-80 rounded-xl shadow-lg z-50`}>
-      <div className="bg-[#224D54] p-4 flex items-center shadow-sm rounded-t-xl relative">
-        <h6 className="text-lg font-bold text-white ">Notifikasi</h6>
-        <button className="absolute right-4 text-white" onClick={onClose}>
+      <div className="bg-[#224D54] p-4 flex items-center justify-between shadow-sm rounded-t-xl relative">
+        <h6 className="text-lg font-bold text-white">Notifikasi</h6>
+        <button className="text-white" onClick={onClose}>
           <RxCross2 size={24} />
         </button>
       </div>
       <div className="p-5 bg-white rounded-b-xl">
-        <div className="flex ">
-          <BsCircleFill size={24} className="text-[#F78A27]" />
-          <p>{message}</p>
-          <div className="text-sm text-black px-4">Selamat Anda berhasil login di web Juragan Ikan.com!</div>
+        {notifications.map((notification, index) => (
+          <div key={index} className="flex items-center mb-2">
+            <BsCircleFill size={24} className="text-[#F78A27] mr-2" />
+            <div>
+              <p>{notification.message}</p>
+              <div className="text-sm text-black">{notification.details}</div>
+            </div>
+          </div>
+        ))}
+        <div className="text-sm text-gray-500 px-8 py-5">Login {getTimeDescription()}</div>
+        <div className="flex justify-center items-center mt-4">
+          <button onClick={onDeleteAll} className="text-red-500 hover:text-red-700">
+            <BsTrash size={24} />
+          </button>
         </div>
-        <div className="text-sm text-gray-500 px-8 py-5 ">Login {getTimeDescription()}</div>
       </div>
     </div>
   );

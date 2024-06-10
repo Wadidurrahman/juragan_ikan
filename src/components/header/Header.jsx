@@ -22,10 +22,12 @@ export default function Header({ noBackground }) {
   const [showNotification, setShowNotification] = useState(false);
   const [notificationCount, setNotificationCount] = useState(0);
   const [notificationMessage, setNotificationMessage] = useState("");
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false); // State untuk mengontrol visibilitas menu mobile
+  const [notifications, setNotifications] = useState([]);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   const handleShowNotification = (message) => {
+    setNotifications([...notifications, message]);
     setShowNotification(true);
     setNotificationMessage(message);
     setNotificationCount(notificationCount + 1);
@@ -35,20 +37,27 @@ export default function Header({ noBackground }) {
   };
 
   const handleCloseNotification = () => {
+    setNotifications([]);
+    setShowNotification(false);
+  };
+
+  const handleDeleteAllNotifications = () => {
+    setNotifications([]);
+    setNotificationCount(0);
     setShowNotification(false);
   };
 
   return (
     <>
       <header className={`header ${noBackground ? "no-background" : ""}`}>
-        <Notification message={notificationMessage} count={notificationCount} show={showNotification} onClose={handleCloseNotification} />
+        <Notification notifications={notifications} show={showNotification} onClose={handleCloseNotification} onDeleteAll={handleDeleteAllNotifications} />
+
         <Disclosure as="nav" className="bg-tealCustom text-white p-4 z-50 fixed w-full">
           {({ open }) => (
             <>
               <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="relative flex h-10 items-center justify-between">
                   <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
-                    {/* Memperbaiki logika untuk mengontrol visibilitas menu mobile */}
                     <Disclosure.Button
                       className="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                       onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -95,7 +104,6 @@ export default function Header({ noBackground }) {
                 </div>
               </div>
 
-              {/* Menambahkan opsi menu mobile */}
               <Disclosure.Panel as="nav" className="sm:hidden">
                 <div className="px-2 pt-2 pb-3 space-y-1">
                   {navigation.map((item) => (

@@ -17,7 +17,7 @@ export default function Pencatatan() {
             untuk meningkatkan produktivitas dan memastikan kesejahteraan ikan
           </p>
         </article>
-        <div className="relative flex flex-col lg:flex-row justify-center items-center h-full lg:-top-[10rem] gap-6 lg:gap-12">
+        <div className="relative flex flex-col lg:flex-row justify-center items-center h-full lg:-top-[10rem] gap-6 lg:gap-12 sm:mt-5">
           <div className="flex flex-col lg:flex-row justify-center items-center border-2 px-12 py-4 shadow-lg bg-white rounded-md space-y-4 lg:space-y-0 lg:space-x-4">
             <img className="w-36 h-36 rounded-full" src={Ikan} alt="im-card" />
             <div className="justify-center items-center text-center lg:text-left">
@@ -36,7 +36,7 @@ export default function Pencatatan() {
               </button>
             </div>
           </div>
-          <div className="flex flex-col lg:flex-row justify-center items-center border-2 px-12 py-4 shadow-lg bg-white rounded-md space-y-4 lg:space-y-0 lg:space-x-4">
+          <div className="flex flex-col lg:flex-row justify-center items-center border-2 px-12 py-4 shadow-lg bg-white rounded-md space-y-4 lg:space-y-0 lg:space-x-4 mb-5">
             <img className="w-36 h-36 rounded-full" src={Penjualan} alt="im-card" />
             <div className="justify-center items-center text-center lg:text-left">
               <h2 className="text-[#224D54] font-bold pb-4">Data Penjualan</h2>
