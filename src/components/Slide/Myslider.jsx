@@ -49,7 +49,7 @@ const Myslider = () => {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container" data-aos="fade-up" data-aos-duration="3000">
       <div>{PrevArrow}</div>
       <Slider {...settings}>
         {Data.map((el, index) => (

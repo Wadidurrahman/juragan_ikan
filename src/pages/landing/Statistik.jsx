@@ -3,6 +3,8 @@ import Bg from "../../assets/aset-bg/bg-statistik.png";
 import Iconpengeluaran from "../../assets/icon/iconpengeluaran.png";
 import Iconpemasukan from "../../assets/icon/iconpemasukan.png";
 import Chart from "chart.js/auto";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 export default function Statistik() {
   const chartPemasukanRef = useRef(null);
@@ -156,20 +158,26 @@ export default function Statistik() {
     };
   }, []);
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
     <main className="bg-[#ffffff] ">
       <section className="relative lg:h-screen lg:items-start">
         <img className="w-full sm:h-[20rem] lg:h-[25rem] object-cover" src={Bg} alt="background" />
 
         <h1 className="absolute font-bold text-5xl poppins text-white top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Statistik</h1>
-        <div className="relative lg:justify-center lg:items-center lg:text-center lg:top-12 sm:items-center sm:text-center">
+        <div className="relative lg:justify-center lg:items-center lg:text-center lg:top-12 sm:items-center sm:text-center" data-aos="fade-up" data-aos-duration="1000">
           <p className="text-center sm:text-center lg:w-3/4 xl:w-1/2 mx-auto py-8">
             Pencatatan yang cermat membantu peternak dalam mengambil
             <br /> keputusan tepat untuk meningkatkan produktivitas dan memastikan <br /> kesejahteraan ikan.
           </p>
         </div>
       </section>
-      <div className="container flex flex-col lg:flex-row lg:justify-center lg:gap-10 py-8 sm:items-center ">
+      <div className="container flex flex-col lg:flex-row lg:justify-center lg:gap-10 py-8 sm:items-center " data-aos="zoom-in-up" data-aos-duration="1000">
         <div className="flex flex-col w-full lg:w-[35%] rounded-lg py-4 shadow-lg mb-8 lg:mb-0 lg:mr-2">
           <h2 className="text-[#224D54] px-3 font-bold text-2xl">Grafik Penjualan Ikan</h2>
           <p className="text-xs font-semibold px-3 text-[#4F4F4F]">Total Penjualan</p>
@@ -177,7 +185,7 @@ export default function Statistik() {
           <canvas ref={chartPemasukanRef} className="w-full"></canvas>
         </div>
 
-        <div className="flex flex-col w-full lg:w-[35%] rounded-lg py-4 shadow-lg">
+        <div className="flex flex-col w-full lg:w-[35%] rounded-lg py-4 shadow-lg" data-aos="zoom-in-up" data-aos-duration="1000">
           <h2 className="text-[#224D54] px-3 font-bold text-2xl">Grafik Pengeluaran Pakan</h2>
           <p className="text-xs font-semibold px-3 text-[#4F4F4F]">Total Pengeluaran</p>
           <hr className="relative w-[80vh] my-3" />
@@ -187,7 +195,7 @@ export default function Statistik() {
 
       <section>
         <div className="relative flex flex-col lg:flex-row lg:justify-center lg:items-center py-20 lg:gap-10 ">
-          <div className="flex justify-center items-center px-12 py-4 shadow-lg bg-white rounded-md lg:w-[37.5%] ">
+          <div className="flex justify-center items-center px-12 py-4 shadow-lg bg-white rounded-md lg:w-[37.5%] " data-aos="zoom-in-right" data-aos-duration="1000">
             <div className="justify-center items-center">
               <h2 className="text-[#224D54] font-bold pb-10">
                 Total <br />
@@ -199,7 +207,7 @@ export default function Statistik() {
             </div>
             <img className="w-60 h-42 rounded-full" src={Iconpemasukan} alt="im-card" />
           </div>
-          <div className="flex justify-center items-center px-12 py-4 shadow-lg bg-white rounded-md lg:w-[37.5%]">
+          <div className="flex justify-center items-center px-12 py-4 shadow-lg bg-white rounded-md lg:w-[37.5%]" data-aos="zoom-in-left" data-aos-duration="1000">
             <div className="justify-center items-center">
               <h2 className="text-[#224D54] font-bold pb-10">
                 Total <br />
