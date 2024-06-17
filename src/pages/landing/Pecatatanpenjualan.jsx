@@ -38,25 +38,25 @@ export default function Pencatatanpenjualan() {
   return (
     <>
       <main>
-        <div className="p-40 h-full grid grid-cols-2">
-          <div className="mt-3">
-            <h2 className="relative font-bold text-3xl right-28">Pencatatan Data Penjualan</h2>
+        <div className="p-5 md:p-10 lg:py-20 h-full grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="mt-10 py-10">
+            <h2 className="font-bold text-2xl md:text-3xl text-center md:text-left ">Pencatatan Data Ikan</h2>
           </div>
-          <div className="relative flex flex-col items-start mt-5 left-28" style={{ direction: "rtl" }}>
+          <div className="mt-20 flex flex-col items-center md:items-end text-center md:text-left">
             <h3 className="text-gray-500 text-lg">Total</h3>
-            <output className="font-bold text-3xl">15.000</output>
+            <output className="font-bold text-2xl md:text-3xl">15.000</output>
             <p className="text-gray-500 text-lg mb-4">Jumlah ikan keseluruhan</p>
           </div>
         </div>
-        <div className="flex items-center gap-2 p-2 -m-36 px-44">
-          <div className="relative">
+        <div className="flex flex-col md:flex-row items-center gap-2 p-2 md:px-20 lg:py-14 -mt-10 md:-mt-20 lg:-mt-36">
+          <div className="relative w-full md:w-auto">
             <select
               onChange={(e) => {
                 const newDate = selectedDate ? new Date(selectedDate) : new Date();
                 newDate.setMonth(months.indexOf(e.target.value));
                 setSelectedDate(newDate);
               }}
-              className="appearance-none border-b-2 border-gray-300 focus:outline-none focus:border-gray-500 p-2"
+              className="appearance-none border-b-2 border-gray-300 focus:outline-none focus:border-gray-500 p-2 w-full md:w-auto"
               value={selectedDate ? months[selectedDate.getMonth()] : ""}
             >
               <option value="" disabled>
@@ -68,16 +68,16 @@ export default function Pencatatanpenjualan() {
                 </option>
               ))}
             </select>
-            <RiArrowDownSLine className="absolute left-24 mt-1 top-3 pointer-events-none" />
+            <RiArrowDownSLine className="absolute right-2 md:right-0 top-3 pointer-events-none" />
           </div>
-          <div className="relative px-5">
+          <div className="relative w-full md:w-auto px-0 md:px-5">
             <select
               onChange={(e) => {
                 const newDate = selectedDate ? new Date(selectedDate) : new Date();
                 newDate.setFullYear(e.target.value);
                 setSelectedDate(newDate);
               }}
-              className="appearance-none border-b-2 border-gray-300 focus:outline-none focus:border-gray-500 p-2"
+              className="appearance-none border-b-2 border-gray-300 focus:outline-none focus:border-gray-500 p-2 w-full md:w-auto"
               value={selectedDate ? selectedDate.getFullYear() : ""}
             >
               <option value="" disabled>
@@ -89,17 +89,15 @@ export default function Pencatatanpenjualan() {
                 </option>
               ))}
             </select>
-            <RiArrowDownSLine className="absolute left-28 mt-1 top-3 pointer-events-none " />
+            <RiArrowDownSLine className="absolute right-2 md:right-0 top-3 pointer-events-none" />
           </div>
-          <div className="relative px-[57rem]">
-            <div className="relative">
-              <button onClick={openPopup} className="p-2 bg-[#F9841A] text-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring focus:border-orange-600 transition-all duration-300">
-                <IoIosAdd size={20} />
-              </button>
-            </div>
+          <div className="flex justify-end md:justify-start w-full md:w-auto mt-2 md:mt-0 lg:px-[50rem]">
+            <button onClick={openPopup} className="p-2 bg-[#F9841A] text-white rounded-lg hover:bg-gray-300 focus:outline-none focus:ring focus:border-orange-600 transition-all duration-300">
+              <IoIosAdd size={20} />
+            </button>
           </div>
         </div>
-        <div className="mt-40 p-8">
+        <div className="mt-10 p-8">
           <div className="shadow-md rounded-xl">
             <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 rounded-xl">
               <thead className="text-xs text-white uppercase bg-[#224D54] dark:bg-gray-700 dark:text-gray-400 rounded-tl-xl">

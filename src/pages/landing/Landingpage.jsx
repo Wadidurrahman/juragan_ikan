@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Slider from "react-slick";
 import BackgroundUtama from "../../assets/aset-landingpage/Background.png";
 import Imgside from "../../assets/aset-landingpage/img-aset.png";
@@ -8,12 +8,15 @@ import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Myslider from "../../components/Slide/Myslider";
+import "aos/dist/aos.css";
+import AOS from "aos";
+import Header from "../../components/header/Header";
 
 function NextArrow(props) {
   const { onClick } = props;
   return (
-    <button className="absolute right-10 top-[26rem] z-10 cursor-pointer" onClick={onClick} aria-label="Next Slide">
-      <MdArrowForwardIos className="text-4xl bg-[#F9841A] text-white px-1 py-2" />
+    <button className="absolute right-2 md:right-10 top-[20rem] md:top-[26rem] z-10 cursor-pointer" onClick={onClick} aria-label="Next Slide">
+      <MdArrowForwardIos className="text-2xl md:text-4xl bg-[#F9841A] text-white px-1 py-2" />
     </button>
   );
 }
@@ -21,8 +24,8 @@ function NextArrow(props) {
 function PrevArrow(props) {
   const { onClick } = props;
   return (
-    <button className="absolute left-14 top-[26rem] z-10 cursor-pointer" onClick={onClick} aria-label="Previous Slide">
-      <MdArrowBackIos className="text-4xl bg-[#F9841A] text-white px-1 py-2" />
+    <button className="absolute left-2 md:left-14 top-[20rem] md:top-[26rem] z-10 cursor-pointer" onClick={onClick} aria-label="Previous Slide">
+      <MdArrowBackIos className="text-2xl md:text-4xl bg-[#F9841A] text-white px-1 py-2" />
     </button>
   );
 }
@@ -45,13 +48,18 @@ export default function Landingpage() {
         },
       },
       {
-        breakpoint: 600,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
         },
       },
     ],
+  };
+
+  const Judul = {
+    judul: ["Juragan", "Ikan"],
+    Discripsi: ["Juragan Ikan hadir sebagai solusi manajemen peternakan ikan yang komprehensif untuk membantu peternak mencapai hasil yang optimal dan memastikan kesejahteraan ikan"],
   };
 
   const Discripsi = {
@@ -66,62 +74,82 @@ export default function Landingpage() {
     isi: "Mulailah peternakan ikan Anda dengan langkah tepat bersama Juragan Ikan. Temukan panduan dan dukungan yang Anda butuhkan untuk memulai dan mengembangkan usaha Anda. Bergabunglah dengan komunitas kami hari ini dan mulailah perjalanan Anda menuju sukses dalam budidaya ikan.",
   };
 
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
-    <main>
-      <div className="relative w-full h-screen">
-        <img className="object-cover w-full h-full" src={BackgroundUtama} alt="Background" />
-        <div className="relative top-[-32rem] items-center px-12">
-          <h1 className="text-7xl font-extrabold text-[#224D54]">
-            Juragan
-            <br />
-            <span className="text-7xl font-extrabold text-[#F9841A]">Ikan</span>
-          </h1>
-          <p className="mt-4">
-            "Juragan Ikan" hadir sebagai solusi manajemen peternakan ikan yang
-            <br /> komprehensif untuk membantu peternak mencapai hasil yang optimal
-            <br /> dan memastikan kesejahteraan ikan.
-          </p>
-          <div className="relative top-5">
-            <a>
-              <buttom
-                className="btn bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400"
-                onClick={() => {
-                  window.location.href = "login";
-                }}
-              >
-                Mulai Sekarang
-              </buttom>
-            </a>
+    <>
+      <main>
+        <Header noBackground={true} />
+        <div className="relative w-full h-screen">
+          <img className="object-cover w-full h-full" src={BackgroundUtama} alt="Background" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center md:items-end md:justify-center md:pr-16 px-4 md:px-12 text-center md:text-left lg:right-[34rem]">
+            <div className="max-w-lg md:mr-10" data-aos="fade-right" data-aos-duration="1000">
+              <h1 className="text-4xl md:text-7xl font-extrabold text-[#224D54] leading-tight md:leading-none">
+                <span className="block md:inline">{Judul.judul[0]}</span>
+                <br className="hidden md:block" />
+                <span className="block md:inline text-[#F9841A]">{Judul.judul[1]}</span>
+              </h1>
+              <p className="mt-4 text-base md:text-lg" data-aos="fade-up-right" data-aos-duration="1000">
+                {Judul.Discripsi}
+              </p>
+              <div className="relative top-5">
+                <button
+                  className="bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400"
+                  onClick={() => {
+                    window.location.href = "login";
+                  }}
+                  data-aos="zoom-in-up"
+                  data-aos-duration="1000"
+                >
+                  Mulai Sekarang
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <article>
-        <div className="flex py-36 p-16">
-          <img className="h-80 rounded-lg object-cover" src={Imgside} alt="Gambar Samping" />
-          <div className="relative px-16 py-10">
-            <h4 className="text-2xl mb-5 font-semibold">{Discripsi2.judul}</h4>
-            <p>{Discripsi2.isi}</p>
+
+        <article>
+          <div className="flex flex-col md:flex-row py-10 md:py-36 px-8 md:px-16">
+            <img className="h-80 rounded-lg object-cover mb-8 md:mb-0" data-aos="flip-left" data-aos-duration="3000" src={Imgside} alt="Gambar Samping" />
+            <div className="md:relative px-0 md:px-16 py-10">
+              <h4 className="text-xl md:text-2xl mb-5 font-semibold" data-aos="fade-left" data-aos-duration="500">
+                {Discripsi2.judul}
+              </h4>
+              <p className="text-base md:text-lg" data-aos="fade-up" data-aos-duration="3000">
+                {Discripsi2.isi}
+              </p>
+            </div>
           </div>
-        </div>
-        <div className="relative px-28 text-center">
+          <div className="relative px-8 md:px-28 text-center">
+            <div>
+              <h1 className="text-xl md:text-2xl mb-5 font-semibold" data-aos="fade-up" data-aos-duration="3000">
+                {Discripsi.judul}
+              </h1>
+              <p className="mb-5 text-base md:text-lg" data-aos="fade-up-right" data-aos-duration="3000">
+                {Discripsi.isi}
+              </p>
+              <p className="mb-5 text-base md:text-lg" data-aos="fade-left" data-aos-duration="3000">
+                {Discripsi.isi1}
+              </p>
+              <p className="text-base md:text-lg" data-aos="fade-up" data-aos-duration="3000">
+                {Discripsi.isi2}
+              </p>
+            </div>
+          </div>
           <div>
-            <h1 className="text-2xl mb-5 font-semibold">{Discripsi.judul}</h1>
-            <p className="mb-5">{Discripsi.isi}</p>
-            <p className="mb-5">{Discripsi.isi1}</p>
-            <p>{Discripsi.isi2}</p>
+            <div className="text-center py-10 md:py-20" data-aos="fade-up" data-aos-duration="3000" s>
+              <h1 className="font-semibold text-xl md:text-2xl mb-5">Artikel</h1>
+              <p className="text-base md:text-lg">
+                Artikel budidaya ternak ikan tawar ini dapat membantu anda <br className="hidden md:block" />
+                untuk budidaya ikan tawar.
+              </p>
+            </div>
+            <Myslider settings={settings} />
           </div>
-        </div>
-        <div>
-          <div className="text-center py-20">
-            <h1 className="font-semibold text-2xl mb-5">Artikel</h1>
-            <p>
-              Artikel budidaya ternak ikan tawar ini dapat membantu anda <br />
-              untuk budidaya ikan tawar.
-            </p>
-          </div>
-          <Myslider />
-        </div>
-      </article>
-    </main>
+        </article>
+      </main>
+    </>
   );
 }

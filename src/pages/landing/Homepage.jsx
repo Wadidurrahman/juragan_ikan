@@ -1,21 +1,22 @@
-import React, { useState } from "react";
-import Slider from "react-slick";
+import React, { useState, useEffect } from "react";
 import Backgroundcover from "../../assets/aset-landingpage/Background.png";
 import Iconikan from "../../assets/Asetpencatatan/icon ikan.png";
 import Iconpakan from "../../assets/Asetpencatatan/icon pakan.png";
 import Iconpenjualan from "../../assets/Asetpencatatan/icon penjualan.png";
 import Iconpemasukan from "../../assets/icon/iconpemasukan.png";
 import Iconpengeluaran from "../../assets/icon/iconpengeluaran.png";
+import { FaTimes } from "react-icons/fa";
+import Imgpopup from "../../assets/Asetpencatatan/icon ikan.png";
 import Imgside from "../../assets/aset-landingpage/img-aset.png";
 import Imgartikel2 from "../../assets/aset-landingpage/img-artikel2.jpg";
 import Imgartikel3 from "../../assets/aset-landingpage/img-artikel3.jpg";
-import { MdArrowBackIos } from "react-icons/md";
-import { MdArrowForwardIos } from "react-icons/md";
-import { FaTimes } from "react-icons/fa";
+import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Imgpopup from "../../assets/Asetpencatatan/icon ikan.png";
 import Myslider from "../../components/Slide/Myslider";
+import Card from "../../components/CardOption/Card";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 const Judul = {
   judul: ["Juragan", "Ikan"],
@@ -55,6 +56,12 @@ export default function Homepage() {
     setIsPopupOpen(false);
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -89,31 +96,37 @@ export default function Homepage() {
     <>
       <main>
         <div className="relative w-full h-screen">
-          <img className="w-full object-cover" src={Backgroundcover} alt="" />
-          <div className="relative top-[-32rem] items-center px-12">
-            <h1 className="text-7xl font-extrabold text-[#224D54]">
-              {Judul.judul[0]}
-              <br />
-              <span className="text-7xl font-extrabold text-[#F9841A]"> {Judul.judul[1]}</span>
-            </h1>
-            <p className="mt-4 lg:w-1/2">{Judul.Discripsi}</p>
-            <div className="relative top-5">
-              <a>
-                <button
-                  className="btn bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400"
-                  onClick={() => {
-                    window.location.href = "pencatatan";
-                  }}
-                >
-                  Catat Sekarang
-                </button>
-              </a>
+          <img className="w-full object-cover" src={Backgroundcover} alt="Background" />
+          <div className="absolute inset-0 flex flex-col items-center justify-center md:items-end md:justify-center md:pr-16 px-4 md:px-12 text-center md:text-left lg:right-[34rem]">
+            <div className="max-w-lg md:mr-10" data-aos="fade-right" data-aos-duration="1000">
+              <h1 className="text-4xl md:text-7xl font-extrabold text-[#224D54] leading-tight md:leading-none">
+                <span className="block md:inline">{Judul.judul[0]}</span>
+                <br className="hidden md:block" />
+                <span className="block md:inline text-[#F9841A]">{Judul.judul[1]}</span>
+              </h1>
+              <p className="mt-4 text-base md:text-lg" data-aos="fade-up-right" data-aos-duration="1000">
+                {Judul.Discripsi}
+              </p>
+              <div className="relative top-5">
+                <a>
+                  <button
+                    className="bg-[#224D54] text-white px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-[#224D54] transition-all duration-400"
+                    onClick={() => {
+                      window.location.href = "pencatatan";
+                    }}
+                    data-aos="zoom-in-up"
+                    data-aos-duration="1000"
+                  >
+                    Catat Sekarang
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
 
         {isPopupOpen && (
-          <section className="absolute z-30 border items-center right-[22rem] top-40 bg-[#FBFDFF] px-11 py-8 rounded-lg shadow-lg ">
+          <section className="absolute z-30 border items-center right-[22rem] top-40 bg-[#FBFDFF] px-11 py-8 rounded-lg shadow-lg" data-aos="zoom-in-up" data-aos-duration="1000">
             <div className="absolute top-4 right-4 cursor-pointer" onClick={handleClosePopup}>
               <FaTimes className="text-2xl text-[#224D54]" />
             </div>
@@ -139,80 +152,53 @@ export default function Homepage() {
           </section>
         )}
         <div>
-          <h1 className="relative items-center text-center justify-center font-semibold text-2xl top-20">Ringkasan Data</h1>
+          <h1 className="relative items-center text-center justify-center font-semibold text-2xl top-20" data-aos="fade-up" data-aos-duration="1000">
+            Ringkasan Data
+          </h1>
           <div className="relative flex justify-center items-center h-full p-20 gap-2 top-10">
-            <card className="flex justify-center items-center border-2 px-12 py-4 shadow-lg bg-white rounded-md ">
-              <div className="justify-center items-center">
-                <h2 className="text-[#224D54] font-bold pb-10">Data Ikan</h2>
-                <button className="bg-[#F9841A] hover:bg-slate-500 transition-all duration-300  text-white font-bold text-sm p-2 px-5 rounded-full">
-                  <a href="/Pencatatanikan">Catat</a>
-                </button>
-              </div>
-              <img className="w-36 h-36 rounded-full" src={Iconikan} alt="im-card" />
-            </card>
-            <card className="flex justify-center items-center border-2 px-12 py-4 shadow-lg bg-white rounded-md ">
-              <div className="justify-center items-center">
-                <h2 className="text-[#224D54] font-bold pb-10">Data Pakan</h2>
-                <button className="bg-[#F9841A] hover:bg-slate-500 transition-all duration-300  text-white font-bold text-sm p-2 px-5 rounded-full">
-                  {" "}
-                  <a href="/pencatatanpakan">Catat</a>
-                </button>
-              </div>
-              <img className="w-36 h-36 rounded-full" src={Iconpakan} alt="im-card" />
-            </card>
-            <card className="flex justify-center items-center border-2 px-12 py-4 shadow-lg bg-white rounded-md ">
-              <div className="justify-center items-center">
-                <h2 className="text-[#224D54] font-bold pb-10">Data Penjualan</h2>
-                <button className="bg-[#F9841A] hover:bg-slate-500 transition-all duration-300  text-white font-bold text-sm p-2 px-5 rounded-full">
-                  <a href="/Pencatatanpenjualan">Catat</a>
-                </button>
-              </div>
-              <img className="w-36 h-36 rounded-full" src={Iconpenjualan} alt="im-card" />
-            </card>
-          </div>
-          <div className="relative flex justify-center items-center h-full p-20 gap-8 top-[-6rem] ">
-            <div className="flex justify-center items-center border-2 px-12 py-4 shadow-lg bg-white rounded-md ">
-              <div className="justify-center items-center">
-                <h2 className="text-[#224D54] font-bold pb-10">
-                  Total <br />
-                  Pemasukan
-                </h2>
-                <button className="bg-[#224D54] hover:bg-slate-500 transition-all duration-300  text-white font-bold text-sm p-2 px-5 rounded-full">
-                  <a href="/Pencatatanikan">Rp.120.500.000</a>
-                </button>
-              </div>
-              <img className="w-60 h-42 rounded-full" src={Iconpemasukan} alt="im-card" />
+            <div data-aos="flip-left" data-aos-duration="1000">
+              <Card title="Data Ikan" imageSrc={Iconikan} link="/Pencatatanikan" />
             </div>
-            <div className="flex justify-center items-center border-2 px-16 py-2 shadow-lg bg-white rounded-md ">
-              <div className="justify-center items-center">
-                <h2 className="text-[#224D54] font-bold pb-10">
-                  Total <br />
-                  Pengeluaran
-                </h2>
-                <button className="bg-[#224D54] hover:bg-slate-500 transition-all duration-300  text-white font-bold text-sm p-2 px-5 rounded-full">
-                  <a href="/Pencatatanikan">Rp.40.350.000</a>
-                </button>
-              </div>
-              <img className="w-60 h-42 rounded-full" src={Iconpengeluaran} alt="im-card" />
+            <div data-aos="flip-left" data-aos-duration="1000">
+              <Card title="Data Pakan" imageSrc={Iconpakan} link="/pencatatanpakan" />
+            </div>
+            <div data-aos="flip-left" data-aos-duration="1000">
+              <Card title="Data Penjualan" imageSrc={Iconpenjualan} link="/Pencatatanpenjualan" />
+            </div>
+          </div>
+          <div className="relative flex justify-center items-center h-full p-20 gap-8 top-[-6rem]">
+            <div data-aos="zoom-in-up" data-aos-duration="1000">
+              <Card title="Total Pemasukan" imageSrc={Iconpemasukan} link="/Pencatatanikan" />
+            </div>
+            <div data-aos="zoom-in-up" data-aos-duration="1000">
+              <Card title="Total Pengeluaran" imageSrc={Iconpengeluaran} link="/Pencatatanikan" />
             </div>
           </div>
         </div>
         <div className="relative px-28 top-[-20] text-center">
           <div>
-            <h1 className="text-2xl mb-5 font-semibold">Kisah Kami</h1>
-            <p className="mb-5">{artikel.isi[0]}</p>
-            <p className="mb-5">{artikel.isi[1]}</p>
-            <p>{artikel.isi[2]}</p>
+            <h1 className="text-2xl mb-5 font-semibold" data-aos="fade-up" data-aos-duration="1000" s>
+              Kisah Kami
+            </h1>
+            <p className="mb-5" data-aos="fade-right" data-aos-duration="1000" s>
+              {artikel.isi[0]}
+            </p>
+            <p className="mb-5" data-aos="fade-left" data-aos-duration="1000" s>
+              {artikel.isi[1]}
+              <p className="mt-4">{artikel.isi[2]}</p>
+            </p>
           </div>
         </div>
         <div>
-          <div className="flex flex-col justify-center items-center py-20 text-center">
-            <h1 className="font-semibold text-2xl mb-5">Artikel</h1>
-            <p className="mb-2">Artikel budidaya ternak ikan tawar ini dapat membantu anda untuk</p>
-            <p>budidaya ikan tawar</p>
+          <div className="text-center py-10 md:py-20" data-aos="fade-up" data-aos-duration="3000" s>
+            <h1 className="font-semibold text-xl md:text-2xl mb-5">Artikel</h1>
+            <p className="text-base md:text-lg">
+              Artikel budidaya ternak ikan tawar ini dapat membantu anda <br className="hidden md:block" />
+              untuk budidaya ikan tawar.
+            </p>
           </div>
+          <Myslider settings={settings} />
         </div>
-        <Myslider />
       </main>
     </>
   );
