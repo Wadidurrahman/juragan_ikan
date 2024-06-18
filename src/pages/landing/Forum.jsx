@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import bg from "../../assets/aset-img/forum.png";
 import Wa from "../../assets/icon/wa.svg";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 export default function Forum() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   const Discripsi = {
     isi: [
       "Bergabunglah dengan grup diskusi WhatsApp kami yang aktif, tempat para peternak ikan berkumpul untuk berbagi pengalaman, tips, dan informasi terkini seputar budidaya ikan.",
@@ -22,11 +30,11 @@ export default function Forum() {
 
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between mt-12">
-            <div className="w-full md:w-1/2 flex flex-col items-center justify-center pb-20">
+            <div className="w-full md:w-1/2 flex flex-col items-center justify-center pb-20" data-aos="zoom-in-up" data-aos-duration="1000">
               <img width={100} height={100} src={Wa} className="py-10" alt="WhatsApp" />
               <button className="px-10 py-1 rounded-full text-white font-bold text-sm bg-teal-600 hover:bg-teal-700">Lanjutkan Obrolan Ke WhatsApp</button>
             </div>
-            <div className="w-full md:w-1/2 px-6 md:px-0 flex flex-col items-center justify-center text-center py-20 bg-white">
+            <div data-aos="fade-left" data-aos-duration="1000" className="w-full md:w-1/2 px-6 md:px-0 flex flex-col items-center justify-center text-center py-20 bg-white">
               {Discripsi.isi.map((paragraph, index) => (
                 <p key={index} className="mb-4">
                   {paragraph}

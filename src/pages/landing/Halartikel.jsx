@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Bgsampul from "../../assets/aset-artikel/bg-artikel.png";
 import Imgside from "../../assets/aset-landingpage/img-aset.png";
 import Imgartikel2 from "../../assets/aset-landingpage/img-artikel2.jpg";
@@ -11,6 +11,8 @@ import { MdArrowForwardIos } from "react-icons/md";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Myslider from "../../components/Slide/Myslider";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
 function NextArrow(props) {
   const { onClick } = props;
@@ -61,6 +63,12 @@ export default function Halartikel() {
     isi: "Artikel budidaya ternak ikan tawar ini dapat membantu anda untuk lebih mudah dalam memulai bisnis baru",
   };
 
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+    });
+  }, []);
+
   return (
     <>
       <main>
@@ -70,7 +78,9 @@ export default function Halartikel() {
           <h1 className="font-bold text-5xl poppins text-white absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">Artikel</h1>
         </section>
         <div className="relative justify-center items-center text-center top-[-4rem] w-full lg:w-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <p>{Discripsi.isi}</p>
+          <p data-aos="zoom-in-up" data-aos-duration="1000" s>
+            {Discripsi.isi}
+          </p>
         </div>
         <div>
           <Myslider />
