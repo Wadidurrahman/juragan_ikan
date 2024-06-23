@@ -1,19 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SAMPUL from "../../assets/sampul.png";
 import PROFIL from "../../assets/profil.webp";
 import { FaPlusCircle } from "react-icons/fa";
 import { RxCross2 } from "react-icons/rx";
 import { IoImageOutline } from "react-icons/io5";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import "aos/dist/aos.css";
+import AOS from "aos";
 
-// Popup Component
 const PopupEditFoto = ({ onClose }) => {
   const handleFileChange = (e) => {
     onClose();
   };
 
   return (
-    <div className="absolute left-[9.5rem] bottom-[-24rem] w-80 rounded-xl shadow-lg z-10">
+    <div className="absolute lg:left-[9.5rem]   w-80 rounded-xl shadow-lg z-10">
       <div className="bg-[#224D54] p-4 flex items-center rounded-t-xl relative">
         <h6 className="text-xl font-semibold text-white mx-auto">Edit Foto</h6>
         <button className="absolute right-4 text-white " onClick={onClose}>
@@ -63,7 +64,7 @@ const Profile = () => {
             <img className="w-full sm:h-[20rem] lg:h-[25rem] object-cover" src={SAMPUL} alt="Sampul" />
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center">
               <h1 className="font-bold text-5xl poppins text-white lg:text-center">My Profile</h1>
-              <div className="relative mt-10  lg:right-[28rem]">
+              <div className="relative mt-2  lg:right-[28rem]">
                 <img className="rounded-full lg:h-48 lg:w-48 sm:h-36 sm:w-36 border-4 shadow-sm " src={PROFIL} alt="Profil" />
                 <button className="absolute top-36 left-[9.5rem]" onClick={togglePopup}>
                   <FaPlusCircle size={24} className="bg-white rounded-full fill-[#224D54]" />
