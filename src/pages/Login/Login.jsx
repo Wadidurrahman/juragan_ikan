@@ -5,6 +5,9 @@ import APPLE from "../../assets/icon/apple.svg";
 import GOOGLE from "../../assets/icon/google.svg";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { GoogleLogin } from "@react-oauth/google";
+import { FacebookLogin } from "@react-oauth/facebook";
+import { AppleLogin } from "@react-oauth/apple";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -33,6 +36,18 @@ export default function Login() {
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
+  };
+
+  const handleGoogleLoginSuccess = (response) => {
+    console.log("Google login success:", response);
+  };
+
+  const handleFacebookLoginSuccess = (response) => {
+    console.log("Facebook login success:", response);
+  };
+
+  const handleAppleLoginSuccess = (response) => {
+    console.log("Apple login success:", response);
   };
 
   return (
@@ -86,15 +101,27 @@ export default function Login() {
         <h4 className="no-underline hover:underline text-sm mt-2 text-right cursor-pointer text-green-700">Lupa Kata Sandi?</h4>
         <h4 className="text-left text-sm">Masuk menggunakan</h4>
         <div className="flex gap-10 justify-center items-center">
-          <button className="justify-center items-center mt-3 rounded-lg px-8 py-1 border border-gray-300 cursor-pointer">
-            <img src={ICON_FB} className="w-6 rounded-sm " alt="Facebook" />
-          </button>
-          <button className="justify-center items-center mt-3 rounded-lg px-8 py-1 border border-gray-300 cursor-pointer">
-            <img src={GOOGLE} className="w-6 rounded-sm " alt="Google" />
-          </button>
-          <button className="justify-center items-center mt-3 rounded-lg px-8 py-1 border border-gray-300 cursor-pointer">
-            <img src={APPLE} className="w-6 rounded-sm " alt="Apple" />
-          </button>
+          <GoogleLogin onSuccess={handleGoogleLoginSuccess} onFailure={(response) => console.error("Google login failed:", response)} />
+          <FacebookLogin
+            appId="YOUR_FACEBOOK_APP_ID"
+            callback={handleFacebookLoginSuccess}
+            render={(renderProps) => (
+              <button onClick={renderProps.onClick} className="justify-center items-center mt-3 rounded-lg px-8 py-1 border border-gray-300 cursor-pointer">
+                <img src={ICON_FB} className="w-6 rounded-sm " alt="Facebook" />
+              </button>
+            )}
+          />
+          <AppleLogin
+            clientId="YOUR_APPLE_CLIENT_ID"
+            redirectURI="YOUR_REDIRECT_URI"
+            onSuccess={handleAppleLoginSuccess}
+            onFailure={(response) => console.error("Apple login failed:", response)}
+            render={(renderProps) => (
+              <button onClick={renderProps.onClick} className="justify-center items-center mt-3 rounded-lg px-8 py-1 border border-gray-300 cursor-pointer">
+                <img src={APPLE} className="w-6 rounded-sm " alt="Apple" />
+              </button>
+            )}
+          />
         </div>
         <hr className="mt-3 border-t border-gray-300" />
         <div className="items-left flex mt-3">
