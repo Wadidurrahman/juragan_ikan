@@ -44,7 +44,7 @@ export default function App() {
         <Route
           path="*"
           element={
-            <LayoutWithFooter noBackground={false}>
+            <LayoutWithFooter>
               <Routes>
                 <Route path="/aboutus" element={<Aboutus />} />
                 <Route path="/profile" element={<Profile />} />

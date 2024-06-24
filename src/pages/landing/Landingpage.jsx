@@ -114,28 +114,16 @@ export default function Landingpage() {
           <div className="flex flex-col md:flex-row py-10 md:py-36 px-8 md:px-16">
             <img className="h-80 rounded-lg object-cover mb-8 md:mb-0" data-aos="flip-left" data-aos-duration="3000" src={Imgside} alt="Gambar Samping" />
             <div className="md:relative px-0 md:px-16 py-10">
-              <h4 className="text-xl md:text-2xl mb-5 font-semibold" data-aos="fade-left" data-aos-duration="500">
-                {Discripsi2.judul}
-              </h4>
-              <p className="text-base md:text-lg" data-aos="fade-up" data-aos-duration="3000">
-                {Discripsi2.isi}
-              </p>
+              <h4 className="text-xl md:text-2xl mb-5 font-semibold">{Discripsi2.judul}</h4>
+              <p className="text-base md:text-lg">{Discripsi2.isi}</p>
             </div>
           </div>
-          <div className="relative px-8 md:px-28 text-center">
+          <div className="relative px-8 md:px-28 text-center" data-aos="fade-up" data-aos-duration="3000">
             <div>
-              <h1 className="text-xl md:text-2xl mb-5 font-semibold" data-aos="fade-up" data-aos-duration="3000">
-                {Discripsi.judul}
-              </h1>
-              <p className="mb-5 text-base md:text-lg" data-aos="fade-up-right" data-aos-duration="3000">
-                {Discripsi.isi}
-              </p>
-              <p className="mb-5 text-base md:text-lg" data-aos="fade-left" data-aos-duration="3000">
-                {Discripsi.isi1}
-              </p>
-              <p className="text-base md:text-lg" data-aos="fade-up" data-aos-duration="3000">
-                {Discripsi.isi2}
-              </p>
+              <h1 className="text-xl md:text-2xl mb-5 font-semibold">{Discripsi.judul}</h1>
+              <p className="mb-5 text-base md:text-lg">{Discripsi.isi}</p>
+              <p className="mb-5 text-base md:text-lg">{Discripsi.isi1}</p>
+              <p className="text-base md:text-lg">{Discripsi.isi2}</p>
             </div>
           </div>
           <div>
