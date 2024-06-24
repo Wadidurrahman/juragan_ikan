@@ -1,44 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Lele } from "../../assets/img/lele";
 import ICON_FB from "../../assets/icon/fb.svg";
 import APPLE from "../../assets/icon/apple.svg";
 import GOOGLE from "../../assets/icon/google.svg";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 export default function Login() {
-  const [showNotification, setShowNotification] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isChecked, setIsChecked] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!email || !password) {
-      setShowNotification(true);
-      return;
-    }
 
-    const emailPattern = /\S+@\S+\.\S+/;
-    if (!emailPattern.test(email)) {
-      setShowNotification(true);
-      return;
+    try {
+      const response = await axios.post("http://localhost:8000/login", { email, password });
+
+      if (response.data.success) {
+        const { token, user } = response.data.data;
+        localStorage.setItem("accessToken", token);
+        console.log("Login successful:", user);
+        navigate("/homepage");
+      } else {
+        console.log("Login failed");
+      }
+    } catch (error) {
+      console.error("Login error: ", error);
     }
-    window.location.href = "/homepage";
   };
 
   const handleCheckboxChange = () => {
     setIsChecked(!isChecked);
   };
-
-  useEffect(() => {
-    if (showNotification) {
-      const timer = setTimeout(() => {
-        setShowNotification(false);
-      }, 3000);
-
-      return () => clearTimeout(timer);
-    }
-  }, [showNotification]);
 
   return (
     <div className="container min-h-screen items-center py-15 px-10 grid grid-cols-2 gap-20 justify-between">
@@ -52,7 +47,7 @@ export default function Login() {
         </div>
         <form onSubmit={handleSubmit}>
           <label className="block mt-1">
-            <span className="text-left after:content-['*'] after:ml-0.10 after:text-red-500 block text-sm font-bold text-slate-700">Email</span>
+            <span className="text-left block text-sm font-bold text-slate-700">Email</span>
             <input
               type="email"
               name="email"
@@ -63,7 +58,7 @@ export default function Login() {
             />
           </label>
           <label className="block mt-1">
-            <span className="text-left after:content-['*'] after:ml-0.10 after:text-red-500 block text-sm font-bold text-slate-700">Kata Sandi</span>
+            <span className="text-left block text-sm font-bold text-slate-700">Kata Sandi</span>
             <div className="relative mt-1">
               <input
                 type="password"
@@ -78,14 +73,6 @@ export default function Login() {
               </span>
             </div>
           </label>
-          {showNotification && (
-            <div className="fixed z-50 flex -top-[16rem] left-36 items-center h-full">
-              <div className="bg-red-100 border border-red-400 text-red-700 px-10 py-3 rounded relative" role="alert">
-                <strong className="font-bold">Oops!</strong>
-                <span className="block sm:inline"> Harap isi semua bidang sebelum melanjutkan.</span>
-              </div>
-            </div>
-          )}
           <button
             type="submit"
             disabled={!email || !password || !isChecked}

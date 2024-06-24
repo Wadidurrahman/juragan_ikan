@@ -1,18 +1,21 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import ICON_FB from "../../assets/icon/fb.svg";
 import APPLE from "../../assets/icon/apple.svg";
 import GOOGLE from "../../assets/icon/google.svg";
 import COVER_IMAGE from "../../assets/img/lele.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Registerasi() {
   const [showNotification, setShowNotification] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const namaLengkap = e.target.namalengkap.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
+
     if (!namaLengkap || !email || !password) {
       setShowNotification(true);
       setTimeout(() => {
@@ -20,7 +23,22 @@ export default function Registerasi() {
       }, 3000);
       return;
     }
-    window.location.href = "login";
+
+    try {
+      const response = await axios.post("http://localhost:8000/register", {
+        namaLengkap,
+        email,
+        password,
+      });
+
+      if (response.data.success) {
+        navigate("/login");
+      } else {
+        setShowNotification(true);
+      }
+    } catch (error) {
+      setShowNotification(true);
+    }
   };
 
   useEffect(() => {
@@ -34,14 +52,14 @@ export default function Registerasi() {
   }, [showNotification]);
 
   return (
-    <div className="container min-h-screen items-center  py-15 px-10 grid grid-cols-2 gap-20 justify-between ">
+    <div className="container min-h-screen items-center py-15 px-10 grid grid-cols-2 gap-20 justify-between ">
       <div className="text-center relative left-10 px-10 py-5">
         <p className="text-xl font-bold mt-5">Selamat Datang di Juragan</p>
         <div className="flex justify-center items-center text-sm mt-2">
           <p> Sudah Punya Akun ?</p>
-          <a href="/login" className=" text-green-700 px-1 font-bold cursor-pointer ">
+          <Link to="/login" className=" text-green-700 px-1 font-bold cursor-pointer ">
             Masuk
-          </a>
+          </Link>
         </div>
         <form onSubmit={handleSubmit}>
           <label className="block mt-1">
@@ -53,7 +71,7 @@ export default function Registerasi() {
               placeholder="Masukkan Nama Lengkap"
             />
           </label>
-          <label onSubmit={handleSubmit} className="block mt-1">
+          <label className="block mt-1">
             <span className="text-left after:content-['*'] after:ml-0.10 after:text-red-500 block font-bold text-sm text-slate-700">Email</span>
             <input
               type="email"
@@ -84,7 +102,7 @@ export default function Registerasi() {
             type="submit"
             className="py-4 w-[30rem] text-xs uppercase tracking-wider font-bold text-white  bg-gray-300 rounded-md shadow-md transition duration-300 ease-in-out cursor-pointer focus:outline-none hover:bg-teal-800 hover:text-white hover:shadow-lg active:translate-y-1 mt-5"
           >
-            Masuk
+            Daftar
           </button>
         </form>
         <div className="items-left flex mt-5">

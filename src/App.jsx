@@ -9,7 +9,6 @@ import Profile from "./pages/landing/Profile";
 import Akun from "./pages/landing/Akun";
 import Pencatatan from "./pages/landing/Pencatatan";
 import Statistik from "./pages/landing/Statistik";
-import { BarChart } from "recharts";
 import Panduan from "./pages/landing/Panduan";
 import Halartikel from "./pages/landing/Halartikel";
 import Pencatatnikan from "./pages/landing/Pencatatanikan";
@@ -21,23 +20,14 @@ import Inputpakan from "./components/Inputpakan";
 import Inputpenjualan from "./components/Inputpenjualan";
 import Forum from "./pages/landing/Forum";
 import Faq from "./pages/landing/Faq";
-import Tabel1 from "./components/aset-faq/Tabel1";
-import Tabel2 from "./components/aset-faq/Tabel2";
-import Tabel3 from "./components/aset-faq/Tabel3";
-import Tabel4 from "./components/aset-faq/Tabel4";
-import Tabel5 from "./components/aset-faq/Tabel5";
-import Tabel6 from "./components/aset-faq/Tabel6";
-import Tabel7 from "./components/aset-faq/Tabel7";
-import Popupeditfoto from "./components/Popupeditfoto";
-import Notification from "./components/header/Notification";
 import Footer from "./components/header/Footer";
 import Header from "./components/header/Header";
 
-function LayoutWithFooter({ children, noBackground }) {
+function LayoutWithFooter({ children }) {
   return (
     <>
-      <Header noBackground={noBackground} />
-      {children}
+      <Header />
+      <main>{children}</main>
       <Footer />
     </>
   );
@@ -49,22 +39,8 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/registerasi" element={<Registerasi />} />
-        <Route
-          path="/landingpage"
-          element={
-            <LayoutWithFooter noBackground={false}>
-              <Landingpage />
-            </LayoutWithFooter>
-          }
-        />
-        <Route
-          path="/homepage"
-          element={
-            <LayoutWithFooter noBackground={false}>
-              <Homepage />
-            </LayoutWithFooter>
-          }
-        />
+        <Route path="/" element={<Landingpage />} />
+        <Route path="/homepage" element={<Homepage />} />
         <Route
           path="*"
           element={
