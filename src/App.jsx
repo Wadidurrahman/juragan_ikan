@@ -39,13 +39,13 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/registerasi" element={<Registerasi />} />
-        <Route path="/" element={<Landingpage />} />
-        <Route path="/homepage" element={<Homepage />} />
         <Route
           path="*"
           element={
             <LayoutWithFooter>
               <Routes>
+                <Route path="/" element={<Landingpage />} />
+                <Route path="/homepage" element={<Homepage />} />
                 <Route path="/aboutus" element={<Aboutus />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/akun" element={<Akun />} />
